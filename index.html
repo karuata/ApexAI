@@ -242,6 +242,23 @@
   .chip{border:1px solid var(--line);border-radius:3px;padding:.55em .85em;font-size:.79rem;color:var(--ink);background:var(--paper-hi)}
   .chip b{font-family:"Newsreader",serif;font-weight:500}
 
+  /* ---------- ARTICLES ---------- */
+  .articles{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .article-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:52px}
+  .article-card{background:var(--paper-hi);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;min-height:100%;transition:.4s var(--ease)}
+  .article-card:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:0 34px 56px -42px rgba(27,26,20,.5)}
+  .article-card .foil-top{height:2px;background:var(--foil);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+  .article-card:hover .foil-top{transform:scaleX(1)}
+  .article-card .ain{padding:28px 28px 26px;display:flex;flex-direction:column;gap:15px;flex:1}
+  .article-meta{font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+  .article-title{font-family:"Newsreader",serif;font-size:1.42rem;font-weight:400;line-height:1.12;letter-spacing:-.01em;color:var(--ink)}
+  .article-summary{font-size:.93rem;color:var(--ink-2);line-height:1.55}
+  .article-links{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .article-link{font-family:"IBM Plex Mono",monospace;font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
+  .article-link:hover{color:var(--gold)}
+  .article-status{font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+  .article-archive{margin-top:34px;display:flex;justify-content:flex-start}
+
   /* ---------- CTA (dark) ---------- */
   .cta{background:var(--graphite);color:var(--on-dark);padding:124px 0;position:relative}
   .cta::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--foil);opacity:.5}
@@ -301,6 +318,11 @@
     .who-grid{grid-template-columns:1fr}.who-item{padding:26px 0 !important;border-right:none !important}.who-item:nth-child(2){border-top:1px solid var(--line)}
     .about-grid{grid-template-columns:1fr;gap:40px}.about-photo-wrap{max-width:370px}
     .fam-head{flex-wrap:wrap}.fam-head .fq{margin-left:0;text-align:left}
+    .article-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:900px){
+    nav.links,.nav-right .btn{display:none}.menu-toggle{display:block}.nav-right{gap:12px}
+    .mobile-panel.open{display:flex}
   }
   @media (max-width:720px){
     .wrap,.nav-inner,.inst .row{padding-left:24px;padding-right:24px}
@@ -335,6 +357,7 @@
       <a href="#approach" data-i18n="nav.approach">Abordagem</a>
       <a href="#services" data-i18n="nav.services">Serviços</a>
       <a href="#cases" data-i18n="nav.cases">Casos</a>
+      <a href="#articles" data-i18n="nav.articles">Artigos</a>
       <a href="#about" data-i18n="nav.about">Sobre</a>
     </nav>
     <div class="nav-right">
@@ -350,6 +373,7 @@
   <a href="#approach" data-i18n="nav.approach">Abordagem</a>
   <a href="#services" data-i18n="nav.services">Serviços</a>
   <a href="#cases" data-i18n="nav.cases">Casos</a>
+  <a href="#articles" data-i18n="nav.articles">Artigos</a>
   <a href="#about" data-i18n="nav.about">Sobre</a>
   <a href="#contact" class="btn" data-i18n="nav.cta">Agendar conversa</a>
 </div>
@@ -421,7 +445,7 @@
 </section>
 
 <!-- THESIS -->
-<section class="thesis">
+<section id="thesis" class="thesis">
   <div class="wrap">
     <span class="eyebrow" data-i18n="thesis.eyebrow">A tese</span>
     <p class="big reveal" data-i18n-html="thesis.big">As decisões certas sobre IA são tomadas <em>antes</em> de investir milhões nas escolhas erradas.</p>
@@ -620,6 +644,58 @@
   </div>
 </section>
 
+<!-- ARTICLES -->
+<section id="articles" class="articles">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="articles.eyebrow">Artigos</span>
+      <h2 data-i18n="articles.h2">Notas executivas sobre IA aplicada.</h2>
+      <p class="intro" data-i18n="articles.intro">Leituras curtas para aprofundar as decisões por trás da transformação: onde investir, como desenhar a capacidade e o que os casos reais ensinam.</p>
+    </div>
+    <div class="article-grid">
+      <article class="article-card reveal">
+        <div class="foil-top"></div>
+        <div class="ain">
+          <span class="article-meta" data-i18n="article1.meta">Decision note · Estratégia</span>
+          <h3 class="article-title" data-i18n="article1.title">Onde a IA cria valor antes do investimento</h3>
+          <p class="article-summary" data-i18n="article1.summary">Um ponto de partida para separar ambição, risco e capital antes que pilotos virem custo recorrente.</p>
+          <div class="article-links">
+            <a class="article-link" href="#thesis" data-i18n="article1.link">Ler a tese</a>
+            <span class="article-status" data-i18n="article.status">No site</span>
+          </div>
+        </div>
+      </article>
+      <article class="article-card reveal">
+        <div class="foil-top"></div>
+        <div class="ain">
+          <span class="article-meta" data-i18n="article2.meta">Field note · Governança</span>
+          <h3 class="article-title" data-i18n="article2.title">Como estruturar uma capacidade real de IA</h3>
+          <p class="article-summary" data-i18n="article2.summary">O desenho operacional que conecta pessoas, métricas, tecnologia e accountability sem transformar IA em teatro.</p>
+          <div class="article-links">
+            <a class="article-link" href="#services" data-i18n="article2.link">Ver mandatos</a>
+            <span class="article-status" data-i18n="article.status">No site</span>
+          </div>
+        </div>
+      </article>
+      <article class="article-card reveal">
+        <div class="foil-top"></div>
+        <div class="ain">
+          <span class="article-meta" data-i18n="article3.meta">Case note · Execução</span>
+          <h3 class="article-title" data-i18n="article3.title">O que muda quando IA sai do piloto</h3>
+          <p class="article-summary" data-i18n="article3.summary">Lições práticas de plataformas, saúde, engenharia e estratégia pública quando a métrica precisa ser resultado.</p>
+          <div class="article-links">
+            <a class="article-link" href="#cases" data-i18n="article3.link">Ver casos</a>
+            <span class="article-status" data-i18n="article.status">No site</span>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="article-archive reveal">
+      <a href="articles/" class="btn ghost"><span data-i18n="articles.archive">Ver arquivo de artigos</span> <span class="arw">→</span></a>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section id="contact" class="cta">
   <div class="wrap">
@@ -655,7 +731,7 @@
 <script>
 const I18N={
  pt:{
-  "nav.cases":"Casos","nav.approach":"Abordagem","nav.services":"Serviços","nav.about":"Sobre","nav.cta":"Agendar conversa",
+  "nav.cases":"Casos","nav.approach":"Abordagem","nav.services":"Serviços","nav.articles":"Artigos","nav.about":"Sobre","nav.cta":"Agendar conversa",
   "hero.eyebrow":"Consultoria executiva de Inteligência Artificial",
   "hero.h1":"Definir onde a IA cria valor — e transformar isso em <em>sistemas que funcionam e escalam</em>.",
   "hero.lede":"Ajudo organizações ambiciosas — em crescimento, modernização ou saúde — a transformar iniciativas fragmentadas de IA em capacidades empresariais confiáveis, governadas e mensuráveis. Ao lado de CEOs e líderes de tecnologia, do capital à execução.",
@@ -693,11 +769,15 @@ const I18N={
   "about.eyebrow":"Sobre","about.photo2":"Sua foto aqui","about.role":"Chief AI Officer (MAGIC Research) · AI Researcher · Fractional CAIO",
   "about.bio":"Chief AI Officer e consultor executivo com mais de 22 anos de experiência, dirigindo IA/ML corporativa, plataformas de dados e modernização de engenharia em empresas globais — incluindo passagem pela Deloitte. Reconhecido pela AWS como especialista Top 1% em IA/ML, atuo também como AI researcher: publico artigos e padrões, participo de agências internacionais de boas práticas de IA e sou autor e revisor de livros e trabalhos técnicos na área. Fui consultor do Ministério da Ciência, Tecnologia e Inovação na Estratégia Nacional de IA do Brasil e liderei programas de IA para organizações Fortune e Forbes 500.",
   "about.c1":"22+ anos em IA e engenharia","about.c2":"Top 1% AI/ML expert · AWS","about.c3":"AI researcher · artigos & standards","about.c4":"Autor e revisor de livros de IA","about.c5":"MCTI — Estratégia Nacional de IA","about.c6":"Fortune & Forbes 500 · Deloitte",
+  "articles.eyebrow":"Artigos","articles.h2":"Notas executivas sobre IA aplicada.","articles.intro":"Leituras curtas para aprofundar as decisões por trás da transformação: onde investir, como desenhar a capacidade e o que os casos reais ensinam.","articles.archive":"Ver arquivo de artigos","article.status":"No site",
+  "article1.meta":"Decision note · Estratégia","article1.title":"Onde a IA cria valor antes do investimento","article1.summary":"Um ponto de partida para separar ambição, risco e capital antes que pilotos virem custo recorrente.","article1.link":"Ler a tese",
+  "article2.meta":"Field note · Governança","article2.title":"Como estruturar uma capacidade real de IA","article2.summary":"O desenho operacional que conecta pessoas, métricas, tecnologia e accountability sem transformar IA em teatro.","article2.link":"Ver mandatos",
+  "article3.meta":"Case note · Execução","article3.title":"O que muda quando IA sai do piloto","article3.summary":"Lições práticas de plataformas, saúde, engenharia e estratégia pública quando a métrica precisa ser resultado.","article3.link":"Ver casos",
   "cta.eyebrow":"Próximo passo","cta.h2":"Uma conversa antes do investimento.","cta.body":"Uma conversa executiva e confidencial de 30 minutos. Sem apresentação de vendas — apenas a decisão que está diante de você e como estruturá-la. Se fizer sentido, seguimos; se não, você sai com clareza.","cta.btn":"Agendar conversa","cta.or":"ou escreva",
   "foot.tag":"Consultoria executiva de IA — decidir, desenhar e liderar a transformação com governança e valor mensurável.","foot.loc":"Brasil · Atuação global"
  },
  en:{
-  "nav.cases":"Cases","nav.approach":"Approach","nav.services":"Services","nav.about":"About","nav.cta":"Book a conversation",
+  "nav.cases":"Cases","nav.approach":"Approach","nav.services":"Services","nav.articles":"Articles","nav.about":"About","nav.cta":"Book a conversation",
   "hero.eyebrow":"Executive AI advisory",
   "hero.h1":"Define where AI creates value — and turn it into <em>systems that actually work and scale</em>.",
   "hero.lede":"I help ambitious organizations — in growth, modernization or healthcare — turn fragmented AI initiatives into reliable, governed and measurable business capabilities. Alongside CEOs and technology leaders, from capital to execution.",
@@ -735,6 +815,10 @@ const I18N={
   "about.eyebrow":"About","about.photo2":"Your photo here","about.role":"Chief AI Officer (MAGIC Research) · AI Researcher · Fractional CAIO",
   "about.bio":"Chief AI Officer and executive advisor with 22+ years of experience directing enterprise AI/ML, data platforms and engineering modernization across global enterprises — including Deloitte. Recognized by AWS as a Top 1% AI/ML expert, I also work as an AI researcher: I publish articles and standards, take part in international AI best-practice bodies, and author and review books and technical work in the field. I advised Brazil's Ministry of Science, Technology and Innovation on the country's National AI Strategy and led AI programs for Fortune and Forbes 500 organizations.",
   "about.c1":"22+ years in AI & engineering","about.c2":"Top 1% AI/ML expert · AWS","about.c3":"AI researcher · papers & standards","about.c4":"Author & reviewer, AI books","about.c5":"MCTI — National AI Strategy","about.c6":"Fortune & Forbes 500 · Deloitte",
+  "articles.eyebrow":"Articles","articles.h2":"Executive notes on applied AI.","articles.intro":"Short reads that go deeper into the decisions behind transformation: where to invest, how to design the capability, and what real cases teach.","articles.archive":"View article archive","article.status":"On site",
+  "article1.meta":"Decision note · Strategy","article1.title":"Where AI creates value before the investment","article1.summary":"A starting point for separating ambition, risk and capital before pilots become recurring cost.","article1.link":"Read the thesis",
+  "article2.meta":"Field note · Governance","article2.title":"How to structure a real AI capability","article2.summary":"The operating design that connects people, metrics, technology and accountability without turning AI into theater.","article2.link":"See mandates",
+  "article3.meta":"Case note · Execution","article3.title":"What changes when AI leaves the pilot stage","article3.summary":"Practical lessons from platforms, healthcare, engineering and public strategy when the metric has to be results.","article3.link":"See cases",
   "cta.eyebrow":"Next step","cta.h2":"A conversation before the investment.","cta.body":"A confidential 30-minute executive conversation. No sales deck — just the decision in front of you and how to structure it. If it fits, we continue; if not, you leave with clarity.","cta.btn":"Book a conversation","cta.or":"or write to",
   "foot.tag":"Executive AI advisory — decide, design and lead the transformation with governance and measurable value.","foot.loc":"Brazil · Global"
  }

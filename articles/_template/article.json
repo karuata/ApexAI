@@ -1,0 +1,43 @@
+{
+  "schema_version": "lemurian-pages/v1",
+  "id": "example",
+  "slug": "example",
+  "canonical_url": "https://karuata.github.io/ApexAI/articles/example/",
+  "title": "Article title",
+  "seo_title": "Article title — Rodrigo Masini",
+  "description": "Short description for SEO, cards, and sharing.",
+  "language": "pt-BR",
+  "status": "draft",
+  "article_type": "blog",
+  "target_audience": "executives",
+  "published_at": null,
+  "updated_at": null,
+  "author": {
+    "name": "Rodrigo Masini de Melo",
+    "url": "https://karuata.github.io/ApexAI/"
+  },
+  "body": {
+    "format": "html",
+    "path": "body.html",
+    "markdown_path": "content.md"
+  },
+  "outline_path": "outline.md",
+  "featured_image": null,
+  "images": [],
+  "sources": {
+    "arxiv_ids": [],
+    "paper_titles": [],
+    "source_file_names": []
+  },
+  "metrics": {
+    "word_count": 0,
+    "reading_time_minutes": 0,
+    "flesch_score": 0,
+    "quality_score": 0
+  },
+  "generation": {
+    "generator": "Lemurian",
+    "mode": "auto",
+    "completed_at": null
+  }
+}
