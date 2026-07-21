@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rodrigo Masini — Consultoria Executiva de Inteligência Artificial</title>
+<meta name="description" content="Consultoria executiva de IA para CEOs e líderes de tecnologia. Chief AI Officer, consultor da Estratégia Nacional de IA do Brasil, líder de IA para Fortune & Forbes 500." />
+<meta property="og:title" content="Rodrigo Masini — Executive AI Advisory" />
+<meta property="og:description" content="Define where AI creates value, design the operating model and governance, and turn investment into systems that actually work and scale." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23201E17'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='32' fill='%23CBAA6A' text-anchor='middle'%3ERM%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,18..72,300;0,18..72,400;0,18..72,500;1,18..72,300;1,18..72,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#ECE9E1;      /* warm alabaster base */
+    --paper-2:#E3DFD4;    /* deeper surface */
+    --paper-3:#DAD5C8;    /* mid surface for bands */
+    --paper-hi:#F7F5EF;   /* near-white — cards */
+    --ink:#1B1A14;        /* rich warm near-black (not pure) */
+    --ink-2:#565247;
+    --ink-3:#847F6F;
+    --line:rgba(27,26,20,.12);
+    --line-2:rgba(27,26,20,.22);
+    --gold:#A9843F;       /* precious accent — used at hairline scale */
+    --gold-soft:rgba(169,132,63,.14);
+    --foil:linear-gradient(135deg,#CBAA6A 0%,#9A7A3C 45%,#E4CB94 100%);
+    --graphite:#201E17;   /* dark sections — warm espresso, not black */
+    --graphite-2:#2A2820;
+    --graphite-3:#343125;
+    --on-dark:#EDE9DE;
+    --on-dark-2:#A9A28F;
+    --gold-dark:#D8B87C;  /* champagne on dark */
+    --foil-dark:linear-gradient(135deg,#EAD3A0,#C6A667 60%,#F0DCAF);
+    --maxw:1200px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden;
+  }
+  body::after{content:"";position:fixed;inset:0;z-index:9998;pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+    opacity:.03;mix-blend-mode:multiply;}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  ::selection{background:var(--gold-soft);color:var(--ink)}
+
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 44px}
+  .serif{font-family:"Newsreader",Georgia,serif}
+  h1,h2,h3{font-family:"Newsreader",Georgia,serif;font-weight:400;letter-spacing:-.014em;line-height:1.04}
+  em{font-style:italic}
+  .mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.71rem;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:.75em}
+  .eyebrow::before{content:"";width:30px;height:1px;background:var(--foil)}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+
+  /* ---------- NAV ---------- */
+  header.nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(236,233,225,.72);backdrop-filter:blur(16px) saturate(1.15);-webkit-backdrop-filter:blur(16px) saturate(1.15);border-bottom:1px solid transparent;transition:border-color .4s,background .4s}
+  header.nav.scrolled{border-bottom-color:var(--line);background:rgba(236,233,225,.9)}
+  .nav-inner{max-width:var(--maxw);margin:0 auto;padding:0 44px;height:74px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;gap:.7rem;font-family:"Newsreader",serif;font-size:1.16rem;letter-spacing:.01em}
+  .brand .mark{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.14em;border:1px solid var(--line-2);padding:.4em .5em;border-radius:2px;line-height:1;background:var(--foil);-webkit-background-clip:text;background-clip:text;color:transparent}
+  nav.links{display:flex;align-items:center;gap:30px}
+  nav.links a{font-family:"IBM Plex Mono",monospace;font-size:.74rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);position:relative;padding:2px 0;transition:color .25s}
+  nav.links a::after{content:"";position:absolute;left:0;right:100%;bottom:-3px;height:1px;background:var(--foil);transition:right .35s var(--ease)}
+  nav.links a:hover{color:var(--ink)}nav.links a:hover::after{right:0}
+  .nav-right{display:flex;align-items:center;gap:18px}
+  .lang{display:inline-flex;border:1px solid var(--line-2);border-radius:3px;overflow:hidden}
+  .lang button{background:none;border:none;cursor:pointer;font-family:"IBM Plex Mono",monospace;font-size:.67rem;letter-spacing:.1em;padding:.45em .62em;color:var(--ink-3);transition:.25s}
+  .lang button.on{background:var(--ink);color:var(--paper)}
+  .btn{display:inline-flex;align-items:center;gap:.6em;cursor:pointer;font-family:"IBM Plex Mono",monospace;font-size:.75rem;letter-spacing:.09em;text-transform:uppercase;padding:.9em 1.5em;border-radius:3px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);transition:.3s var(--ease);white-space:nowrap}
+  .btn:hover{background:transparent;color:var(--ink)}
+  .btn .arw{transition:transform .3s var(--ease)}.btn:hover .arw{transform:translateX(3px)}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--line-2)}
+  .btn.ghost:hover{border-color:var(--ink)}
+  .btn.on-dark{border:1px solid var(--gold-dark);background:var(--gold-dark);color:var(--graphite)}
+  .btn.on-dark:hover{background:transparent;color:var(--gold-dark)}
+  .menu-toggle{display:none;background:none;border:1px solid var(--line-2);border-radius:3px;padding:.55em .7em;cursor:pointer}
+  .menu-toggle span{display:block;width:18px;height:1.5px;background:var(--ink);margin:3.5px 0}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:158px 0 96px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+    background-size:72px 72px;-webkit-mask-image:radial-gradient(120% 88% at 78% 4%,#000 0%,transparent 60%);mask-image:radial-gradient(120% 88% at 78% 4%,#000 0%,transparent 60%)}
+  .hero::after{content:"";position:absolute;top:-20%;right:-10%;width:60%;height:120%;pointer-events:none;background:radial-gradient(closest-side,rgba(169,132,63,.10),transparent 70%)}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.12fr .88fr;gap:70px;align-items:center}
+  .hero h1{font-size:clamp(2.7rem,5.4vw,4.9rem);margin:24px 0 0;max-width:15ch;font-weight:400}
+  .hero h1 em{position:relative;white-space:normal}
+  .hero h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:2px;background:var(--foil)}
+  .hero .credline{margin-top:26px;font-family:"IBM Plex Mono",monospace;font-size:.76rem;letter-spacing:.06em;color:var(--ink-2);display:flex;flex-wrap:wrap;gap:.55em .95em}
+  .hero .credline span{position:relative;padding-left:1.1em}
+  .hero .credline span::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+  .hero .lede{margin-top:24px;max-width:47ch;color:var(--ink-2);font-size:1.08rem}
+  .hero-cta{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px}
+
+  /* dossier — layered premium object */
+  .dossier-wrap{position:relative}
+  .dossier-wrap::before{content:"";position:absolute;inset:22px -22px -22px 22px;border:1px solid var(--line-2);border-radius:6px;background:linear-gradient(160deg,var(--paper-2),transparent)}
+  .dossier{position:relative;border:1px solid var(--line-2);background:var(--paper-hi);border-radius:6px;overflow:hidden;box-shadow:0 50px 90px -55px rgba(27,26,20,.55)}
+  .dossier .foil-top{height:3px;background:var(--foil)}
+  .portrait{position:relative;aspect-ratio:4/5;background:linear-gradient(155deg,var(--paper-2),var(--paper-hi));overflow:hidden}
+  /* ===== FOTO 1 (HERO) — troque .placeholder por: <img class="photo" src="SUA-FOTO.jpg" alt="Rodrigo Masini"> · retrato 4:5 (ex.: 1200×1500) ===== */
+  .portrait .placeholder{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--ink-3);text-align:center;padding:24px}
+  .portrait .placeholder svg{width:40px;height:40px;stroke:var(--ink-3);fill:none;stroke-width:1.05;opacity:.65}
+  .portrait .placeholder .lbl{font-family:"IBM Plex Mono",monospace;font-size:.67rem;letter-spacing:.15em;text-transform:uppercase}
+  .portrait .placeholder .dim{font-family:"IBM Plex Mono",monospace;font-size:.59rem;letter-spacing:.1em;opacity:.7}
+  .portrait .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .portrait .coord{position:absolute;top:12px;left:14px;font-family:"IBM Plex Mono",monospace;font-size:.56rem;letter-spacing:.12em;color:var(--ink-3);opacity:.8}
+  .portrait::after{content:"";position:absolute;inset:0;box-shadow:inset 0 -70px 60px -46px rgba(27,26,20,.3);pointer-events:none}
+  .plate{display:flex;align-items:center;justify-content:space-between;padding:15px 18px;border-top:1px solid var(--line)}
+  .plate .pn{font-family:"Newsreader",serif;font-size:1.14rem}
+  .plate .pr{font-family:"IBM Plex Mono",monospace;font-size:.61rem;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);text-align:right;line-height:1.5}
+  .instrument{padding:16px 18px 20px;border-top:1px solid var(--line);background:var(--paper)}
+  .instrument .ihead{font-family:"IBM Plex Mono",monospace;font-size:.59rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-bottom:16px;display:flex;justify-content:space-between}
+  .instrument .ihead .code{background:var(--foil);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .scale{position:relative;display:flex;justify-content:space-between}
+  .scale::before{content:"";position:absolute;left:5px;right:5px;top:5px;height:1px;background:var(--line-2)}
+  .stop{position:relative;display:flex;flex-direction:column;align-items:center;gap:9px;flex:1;text-align:center}
+  .stop .dot{width:11px;height:11px;border-radius:50%;border:1px solid var(--ink-3);background:var(--paper);z-index:1;transition:.3s}
+  .stop .sl{font-family:"IBM Plex Mono",monospace;font-size:.57rem;letter-spacing:.05em;text-transform:uppercase;color:var(--ink-3);line-height:1.2}
+  .stop.active .dot{background:var(--gold);border-color:var(--gold);box-shadow:0 0 0 4px var(--gold-soft)}
+  .stop.active .sl{color:var(--ink);font-weight:500}
+
+  /* ---------- INSTITUTIONS BAND ---------- */
+  .inst{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--paper-hi)}
+  .inst .row{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:14px 30px;padding:22px 44px}
+  .inst .lbl{font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+  .inst .item{font-family:"IBM Plex Mono",monospace;font-size:.74rem;letter-spacing:.05em;color:var(--ink-2)}
+  .inst .sep{width:4px;height:4px;border-radius:50%;background:var(--line-2)}
+
+  /* ---------- IMPACT ---------- */
+  .impact{padding:96px 0}
+  .impact-grid{display:grid;grid-template-columns:repeat(6,1fr);margin-top:44px;border-top:1px solid var(--line-2)}
+  .kpi{padding:30px 22px 26px;border-left:1px solid var(--line)}
+  .kpi:first-child{border-left:none}
+  .kpi .rule{width:26px;height:2px;background:var(--foil);margin-bottom:16px}
+  .kpi .n{font-family:"Newsreader",serif;font-size:clamp(1.8rem,3vw,2.5rem);line-height:1;letter-spacing:-.02em}
+  .kpi .l{margin-top:11px;font-size:.8rem;color:var(--ink-2);line-height:1.45}
+
+  section{padding:112px 0;position:relative}
+  .sec-head{max-width:62ch}
+  .sec-head h2{font-size:clamp(2.1rem,3.9vw,3.2rem);margin-top:18px}
+  .sec-head .intro{margin-top:20px;color:var(--ink-2);max-width:54ch;font-size:1.06rem}
+
+  /* ---------- THESIS (dark) ---------- */
+  .thesis{background:var(--graphite);color:var(--on-dark);padding:124px 0;position:relative}
+  .thesis::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--foil);opacity:.5}
+  .thesis .eyebrow{color:var(--gold-dark)}.thesis .eyebrow::before{background:var(--foil-dark)}
+  .thesis .big{font-family:"Newsreader",serif;font-size:clamp(2rem,3.9vw,3.2rem);line-height:1.16;max-width:23ch;margin-top:26px;letter-spacing:-.012em}
+  .thesis .big em{background:var(--foil-dark);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
+  .thesis .sub{margin-top:26px;color:var(--on-dark-2);max-width:52ch}
+
+  /* ---------- VANTAGE (branding) ---------- */
+  .vantage{background:var(--paper-3)}
+  .formation{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;border-top:1px solid var(--line-2)}
+  .form-col{padding:34px 26px 30px;border-left:1px solid var(--line);position:relative}
+  .form-col:first-child{border-left:none}
+  .form-col .rn{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.14em;background:var(--foil);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .form-col h3{font-size:1.42rem;margin:14px 0 12px;line-height:1.12}
+  .form-col p{font-size:.92rem;color:var(--ink-2)}
+  .throughline{margin-top:44px;padding-top:32px;border-top:1px solid var(--line);display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap}
+  .throughline .tl-mark{font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);padding-top:.5em;white-space:nowrap}
+  .throughline p{font-family:"Newsreader",serif;font-style:italic;font-size:clamp(1.3rem,2.4vw,1.9rem);line-height:1.3;max-width:34ch;flex:1;min-width:280px}
+
+  /* ---------- APPROACH ---------- */
+  .triad{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border-top:1px solid var(--line-2)}
+  .lane{padding:38px 32px 42px;border-left:1px solid var(--line);position:relative}
+  .lane:first-child{border-left:none}
+  .lane .idx{font-family:"IBM Plex Mono",monospace;font-size:.65rem;letter-spacing:.16em;color:var(--gold)}
+  .lane h3{font-size:1.9rem;margin:14px 0 18px}
+  .lane .q{color:var(--ink-2);font-size:.97rem;min-height:3.6em}
+  .lane .o{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-family:"Newsreader",serif;font-style:italic;font-size:1.12rem;color:var(--ink)}
+  .lane::before{content:"";position:absolute;left:32px;top:0;width:34px;height:2px;background:var(--foil);transform:scaleX(0);transform-origin:left;transition:transform .55s var(--ease)}
+  .lane:first-child::before{left:0}
+  .lane.in::before{transform:scaleX(1)}
+
+  /* ---------- SERVICES ---------- */
+  .svc-family{margin-top:64px}
+  .svc-family:first-of-type{margin-top:52px}
+  .fam-head{display:flex;align-items:baseline;gap:18px;padding-bottom:20px;border-bottom:1px solid var(--line-2)}
+  .fam-head .fk{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+  .fam-head h3{font-size:1.7rem}
+  .fam-head .fq{font-family:"Newsreader",serif;font-style:italic;color:var(--ink-2);font-size:1.02rem;margin-left:auto;text-align:right;max-width:32ch}
+  .svc-pair{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:22px}
+  .svc{background:var(--paper-hi);border:1px solid var(--line);border-radius:6px;padding:0 0 26px;overflow:hidden;transition:.4s var(--ease);display:flex;flex-direction:column}
+  .svc:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:0 34px 56px -42px rgba(27,26,20,.5)}
+  .svc .foil-top{height:2px;background:var(--foil);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease)}
+  .svc:hover .foil-top{transform:scaleX(1)}
+  .svc .in{padding:28px 28px 0}
+  .svc .trigger{font-family:"Newsreader",serif;font-style:italic;font-size:1.05rem;color:var(--ink);line-height:1.4}
+  .svc .trigger::before{content:"“";color:var(--gold)}.svc .trigger::after{content:"”";color:var(--gold)}
+  .svc h4{font-family:"Newsreader",serif;font-weight:500;font-size:1.28rem;margin:20px 0 12px}
+  .svc .sd{color:var(--ink-2);font-size:.93rem;flex:1}
+  .svc .smeta{margin:20px 28px 0;padding-top:15px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .svc-note{margin-top:40px;padding:24px 28px;border:1px dashed var(--line-2);border-radius:6px;background:var(--paper);font-size:.92rem;color:var(--ink-2)}
+  .svc-note b{font-family:"Newsreader",serif;font-weight:500;color:var(--ink)}
+
+  /* ---------- ACCELERATORS (dark) ---------- */
+  .accel{background:var(--graphite);color:var(--on-dark);padding:112px 0;position:relative}
+  .accel::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--foil);opacity:.5}
+  .accel .eyebrow{color:var(--gold-dark)}.accel .eyebrow::before{background:var(--foil-dark)}
+  .accel .sec-head h2{color:var(--on-dark)}
+  .accel .sec-head .intro{color:var(--on-dark-2)}
+  .accel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+  .acc{border:1px solid rgba(237,233,222,.14);border-radius:6px;padding:28px 26px 30px;background:linear-gradient(160deg,rgba(237,233,222,.045),transparent)}
+  .acc .tag{font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;background:var(--foil-dark);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .acc h3{color:var(--on-dark);font-size:1.5rem;margin:16px 0 12px}
+  .acc p{color:var(--on-dark-2);font-size:.92rem}
+
+  /* ---------- WHO ---------- */
+  .who{background:var(--paper-2)}
+  .who-grid{display:grid;grid-template-columns:1fr 1fr;margin-top:52px;border-top:1px solid var(--line-2)}
+  .who-item{padding:30px 40px 30px 0;border-top:1px solid var(--line);display:flex;gap:20px}
+  .who-item:nth-child(-n+2){border-top:none}
+  .who-item:nth-child(odd){border-right:1px solid var(--line)}
+  .who-item:nth-child(even){padding-left:40px}
+  .who-item .k{font-family:"IBM Plex Mono",monospace;font-size:.72rem;color:var(--gold);letter-spacing:.1em;padding-top:5px}
+  .who-item p{font-size:1.03rem;color:var(--ink)}
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start;margin-top:20px}
+  .about-photo-wrap{position:relative}
+  .about-photo-wrap::before{content:"";position:absolute;inset:18px -18px -18px 18px;border:1px solid var(--line-2);border-radius:6px}
+  .about-photo{position:relative;aspect-ratio:4/5;border:1px solid var(--line-2);border-radius:6px;overflow:hidden;background:linear-gradient(155deg,var(--paper-2),var(--paper-hi));box-shadow:0 44px 80px -54px rgba(27,26,20,.5)}
+  .about-photo .foil-top{height:3px;background:var(--foil)}
+  /* ===== FOTO 2 (SOBRE) — troque .placeholder por: <img class="photo" src="SUA-FOTO-2.jpg" alt="Rodrigo Masini"> · retrato 4:5 ===== */
+  .about-photo .placeholder{position:absolute;inset:3px 0 0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--ink-3);text-align:center;padding:24px}
+  .about-photo .placeholder svg{width:42px;height:42px;stroke:var(--ink-3);fill:none;stroke-width:1.05;opacity:.65}
+  .about-photo .placeholder .lbl{font-family:"IBM Plex Mono",monospace;font-size:.67rem;letter-spacing:.15em;text-transform:uppercase}
+  .about-photo .placeholder .dim{font-family:"IBM Plex Mono",monospace;font-size:.59rem;letter-spacing:.1em;opacity:.7}
+  .about-photo .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .about h2{font-size:clamp(2.1rem,3.7vw,3rem);margin-top:16px}
+  .about .role{font-family:"IBM Plex Mono",monospace;font-size:.73rem;letter-spacing:.09em;text-transform:uppercase;color:var(--gold);margin-top:16px}
+  .about .bio{margin-top:22px;color:var(--ink-2);font-size:1.04rem;max-width:58ch}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px}
+  .chip{border:1px solid var(--line);border-radius:3px;padding:.55em .85em;font-size:.79rem;color:var(--ink);background:var(--paper-hi)}
+  .chip b{font-family:"Newsreader",serif;font-weight:500}
+
+  /* ---------- CTA (dark) ---------- */
+  .cta{background:var(--graphite);color:var(--on-dark);padding:124px 0;position:relative}
+  .cta::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:var(--foil);opacity:.5}
+  .cta .eyebrow{color:var(--gold-dark)}.cta .eyebrow::before{background:var(--foil-dark)}
+  .cta h2{font-size:clamp(2.2rem,4.1vw,3.4rem);margin-top:22px;max-width:20ch}
+  .cta .ctxt{margin-top:24px;color:var(--on-dark-2);max-width:50ch;font-size:1.08rem}
+  .cta-row{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:26px}
+  .cta-row .or{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-dark-2)}
+  .cta-row a.mail{font-family:"IBM Plex Mono",monospace;font-size:.82rem;color:var(--on-dark);border-bottom:1px solid var(--gold-dark);padding-bottom:3px}
+
+  /* ---------- FOOTER ---------- */
+  footer.foot{background:var(--graphite-2);color:var(--on-dark-2);padding:62px 0 40px}
+  .foot-grid{display:flex;justify-content:space-between;align-items:flex-start;gap:40px;flex-wrap:wrap}
+  .foot .fbrand{font-family:"Newsreader",serif;font-size:1.4rem;color:var(--on-dark)}
+  .foot .ftag{margin-top:10px;max-width:36ch;font-size:.9rem}
+  .foot .fcol{display:flex;flex-direction:column;gap:9px;font-family:"IBM Plex Mono",monospace;font-size:.78rem;letter-spacing:.04em}
+  .foot .fcol a:hover{color:var(--gold-dark)}
+  .foot .frights{margin-top:46px;padding-top:22px;border-top:1px solid rgba(237,233,222,.12);font-family:"IBM Plex Mono",monospace;font-size:.68rem;letter-spacing:.08em;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+  /* ---------- PAINS ---------- */
+  .pains{background:var(--paper-2)}
+  .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+  .pain{position:relative;background:var(--paper-hi);border:1px solid var(--line);border-left:2px solid var(--gold);border-radius:0 6px 6px 0;padding:26px 26px 26px;font-family:"Newsreader",serif;font-style:italic;font-size:1.1rem;line-height:1.42;color:var(--ink)}
+  .pain::after{content:"”";position:absolute;bottom:0;right:15px;font-family:"Newsreader",serif;font-size:2.4rem;color:var(--gold);opacity:.28;line-height:1}
+  .pain-turn{margin-top:44px;padding-top:32px;border-top:1px solid var(--line-2);font-family:"Newsreader",serif;font-size:clamp(1.45rem,2.7vw,2.15rem);line-height:1.28;max-width:34ch;color:var(--ink)}
+  .pain-turn em{background:var(--foil);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:italic}
+
+  /* ---------- CASES ---------- */
+  .case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:52px}
+  .case{background:var(--paper-hi);border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:.4s var(--ease)}
+  .case:hover{transform:translateY(-4px);border-color:var(--line-2);box-shadow:0 34px 56px -42px rgba(27,26,20,.5)}
+  .case .foil-top{height:2px;background:var(--foil)}
+  .case .cin{padding:28px 30px 26px;display:flex;flex-direction:column;gap:15px;flex:1}
+  .case-tag{font-family:"IBM Plex Mono",monospace;font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold)}
+  .case-metric{font-family:"Newsreader",serif;font-size:clamp(1.7rem,2.8vw,2.25rem);line-height:1.06;letter-spacing:-.02em;color:var(--ink)}
+  .case-line{display:flex;gap:14px;font-size:.9rem;color:var(--ink-2);line-height:1.5}
+  .case-line b{font-family:"IBM Plex Mono",monospace;font-size:.61rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);flex:0 0 62px;padding-top:.3em}
+  .case-out{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);font-family:"Newsreader",serif;font-style:italic;font-size:1.06rem;color:var(--ink)}
+  .track{margin-top:48px;padding-top:26px;border-top:1px solid var(--line-2);display:flex;gap:8px 20px;align-items:baseline;flex-wrap:wrap}
+  .track-lbl{font-family:"IBM Plex Mono",monospace;font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);white-space:nowrap}
+  .track-items{font-family:"IBM Plex Mono",monospace;font-size:.75rem;letter-spacing:.02em;color:var(--ink-2);line-height:1.9}
+
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:1000px){
+    .hero-grid{grid-template-columns:1fr;gap:52px}.dossier-wrap{max-width:430px}
+    .impact-grid{grid-template-columns:repeat(3,1fr)}
+    .kpi:nth-child(-n+3){border-top:none}.kpi:nth-child(3n+1){border-left:none}
+    .kpi:nth-child(n+4){border-top:1px solid var(--line)}
+    .formation{grid-template-columns:repeat(2,1fr)}
+    .form-col:nth-child(-n+2){border-top:none}.form-col:nth-child(odd){border-left:none}
+    .form-col:nth-child(n+3){border-top:1px solid var(--line)}
+    .triad,.svc-pair,.accel-grid{grid-template-columns:1fr}
+    .lane{border-left:none;border-top:1px solid var(--line);padding-left:0;padding-right:0}.lane:first-child{border-top:none}.lane::before,.lane:first-child::before{left:0}
+    .who-grid{grid-template-columns:1fr}.who-item{padding:26px 0 !important;border-right:none !important}.who-item:nth-child(2){border-top:1px solid var(--line)}
+    .about-grid{grid-template-columns:1fr;gap:40px}.about-photo-wrap{max-width:370px}
+    .fam-head{flex-wrap:wrap}.fam-head .fq{margin-left:0;text-align:left}
+  }
+  @media (max-width:720px){
+    .wrap,.nav-inner,.inst .row{padding-left:24px;padding-right:24px}
+    nav.links,.nav-right .btn{display:none}.menu-toggle{display:block}.nav-right{gap:12px}
+    section,.impact{padding:76px 0}.hero{padding:120px 0 72px}.hero::before{display:none}
+    .impact-grid{grid-template-columns:repeat(2,1fr)}
+    .kpi{border-left:none !important;border-top:1px solid var(--line) !important}.kpi:nth-child(-n+2){border-top:none !important}.kpi:nth-child(odd){border-right:1px solid var(--line)}
+    .formation{grid-template-columns:1fr}.form-col{border-left:none !important;border-top:1px solid var(--line);padding-left:0;padding-right:0}.form-col:first-child{border-top:none}
+    .mobile-panel.open{display:flex}
+  }
+  .mobile-panel{display:none;position:fixed;inset:74px 0 auto 0;z-index:99;background:var(--paper);border-bottom:1px solid var(--line-2);flex-direction:column;padding:16px 24px 26px}
+  .mobile-panel a{font-family:"IBM Plex Mono",monospace;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;padding:14px 0;border-bottom:1px solid var(--line);color:var(--ink-2)}
+  .mobile-panel .btn{display:inline-flex;margin-top:16px;justify-content:center}
+
+  @media (max-width:1000px){ .pain-grid{grid-template-columns:repeat(2,1fr)} .case-grid{grid-template-columns:1fr} }
+  @media (max-width:720px){ .pain-grid{grid-template-columns:1fr} }
+  @media (prefers-reduced-motion:reduce){
+    *{scroll-behavior:auto !important}
+    .reveal{opacity:1 !important;transform:none !important;transition:none !important}
+    .lane::before,.svc .foil-top{transition:none}
+    .btn,.svc,nav.links a::after{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top"><span class="mark">RM</span><span>Rodrigo Masini</span></a>
+    <nav class="links" aria-label="Principal">
+      <a href="#approach" data-i18n="nav.approach">Abordagem</a>
+      <a href="#services" data-i18n="nav.services">Serviços</a>
+      <a href="#cases" data-i18n="nav.cases">Casos</a>
+      <a href="#about" data-i18n="nav.about">Sobre</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button data-lang="pt" class="on">PT</button><button data-lang="en">EN</button>
+      </div>
+      <a href="#contact" class="btn" data-i18n="nav.cta">Agendar conversa</a>
+      <button class="menu-toggle" id="menuBtn" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="mobile-panel" id="mobilePanel">
+  <a href="#approach" data-i18n="nav.approach">Abordagem</a>
+  <a href="#services" data-i18n="nav.services">Serviços</a>
+  <a href="#cases" data-i18n="nav.cases">Casos</a>
+  <a href="#about" data-i18n="nav.about">Sobre</a>
+  <a href="#contact" class="btn" data-i18n="nav.cta">Agendar conversa</a>
+</div>
+<span id="top"></span>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="reveal">
+        <span class="eyebrow" data-i18n="hero.eyebrow">Consultoria executiva de Inteligência Artificial</span>
+        <h1 data-i18n-html="hero.h1">Definir onde a IA cria valor — e transformar isso em <em>sistemas que funcionam e escalam</em>.</h1>
+        <p class="lede" data-i18n="hero.lede">Ajudo organizações ambiciosas — em crescimento, modernização ou saúde — a transformar iniciativas fragmentadas de IA em capacidades empresariais confiáveis, governadas e mensuráveis. Ao lado de CEOs e líderes de tecnologia, do capital à execução.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn"><span data-i18n="hero.cta1">Agendar conversa</span> <span class="arw">→</span></a>
+          <a href="#services" class="btn ghost" data-i18n="hero.cta2">Ver os serviços</a>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="dossier-wrap">
+          <figure class="dossier">
+            <div class="foil-top"></div>
+            <div class="portrait">
+              <span class="coord">RM · 04S — AI ADVISORY</span>
+              <!-- ====== FOTO 1 — HERO ====== Substitua a div abaixo por: <img class="photo" src="SUA-FOTO.jpg" alt="Rodrigo Masini"> -->
+              <div class="placeholder">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+                <span class="lbl" data-i18n="hero.photo1">Sua foto aqui</span>
+                <span class="dim">RETRATO · 4:5</span>
+              </div>
+            </div>
+            <figcaption class="plate">
+              <span class="pn">Rodrigo Masini</span>
+              <span class="pr" data-i18n="hero.plateRole">Chief AI Officer<br>Fractional CAIO</span>
+            </figcaption>
+            <div class="instrument">
+              <div class="ihead"><span data-i18n="hero.instHead">Decisão de saída</span><span class="code">04 · DECISIONS</span></div>
+              <div class="scale">
+                <div class="stop active"><span class="dot"></span><span class="sl" data-i18n="dec.invest">Investir</span></div>
+                <div class="stop"><span class="dot"></span><span class="sl" data-i18n="dec.accel">Acelerar</span></div>
+                <div class="stop"><span class="dot"></span><span class="sl" data-i18n="dec.redesign">Redesenhar</span></div>
+                <div class="stop"><span class="dot"></span><span class="sl" data-i18n="dec.stop">Interromper</span></div>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAINS -->
+<section id="pains" class="pains">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="pains.eyebrow">As dores</span>
+      <h2 data-i18n="pains.h2">Você reconhece algum destes?</h2>
+    </div>
+    <div class="pain-grid">
+      <blockquote class="pain reveal" data-i18n="pain.1">Estamos gastando milhões e a IA não entrega.</blockquote>
+      <blockquote class="pain reveal" data-i18n="pain.2">Temos dezenas de iniciativas e nenhuma gera ROI.</blockquote>
+      <blockquote class="pain reveal" data-i18n="pain.3">Não sabemos por onde começar — nem onde está o risco real.</blockquote>
+      <blockquote class="pain reveal" data-i18n="pain.4">O board quer uma estratégia de IA; nós precisamos de clareza.</blockquote>
+      <blockquote class="pain reveal" data-i18n="pain.5">Ninguém sabe quem decide, aprova ou responde pela IA.</blockquote>
+      <blockquote class="pain reveal" data-i18n="pain.6">Vamos investir pesado numa plataforma ou aquisição — e não sabemos se a IA funciona mesmo.</blockquote>
+    </div>
+    <p class="pain-turn reveal" data-i18n-html="pains.turn">Se você se reconheceu, o problema não é falta de tecnologia. É falta de <em>decisão, estrutura e governança</em>.</p>
+  </div>
+</section>
+
+<!-- THESIS -->
+<section class="thesis">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="thesis.eyebrow">A tese</span>
+    <p class="big reveal" data-i18n-html="thesis.big">As decisões certas sobre IA são tomadas <em>antes</em> de investir milhões nas escolhas erradas.</p>
+    <p class="sub reveal" data-i18n="thesis.sub">O que você contrata não é ferramenta, hora técnica ou software — é clareza, estrutura, governança, execução e valor mensurável de negócio.</p>
+  </div>
+</section>
+
+<!-- APPROACH -->
+<section id="approach">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="approach.eyebrow">A abordagem</span>
+      <h2 data-i18n="approach.h2">Decidir. Desenhar. Liderar.</h2>
+      <p class="intro" data-i18n="approach.intro">Três perguntas definem cada transformação de IA. Atuo nas três — do capital à execução.</p>
+    </div>
+    <div class="triad">
+      <div class="lane reveal"><div class="idx">01</div><h3 data-i18n="lane1.k">Decidir</h3><p class="q" data-i18n="lane1.q">Onde investir, o que evitar e como reduzir a incerteza?</p><p class="o" data-i18n="lane1.o">Clareza, priorização e proteção de capital.</p></div>
+      <div class="lane reveal"><div class="idx">02</div><h3 data-i18n="lane2.k">Desenhar</h3><p class="q" data-i18n="lane2.q">Como organizar pessoas, processos, tecnologia, risco e métricas?</p><p class="o" data-i18n="lane2.o">Capacidade repetível, governada e economicamente justificável.</p></div>
+      <div class="lane reveal"><div class="idx">03</div><h3 data-i18n="lane3.k">Liderar</h3><p class="q" data-i18n="lane3.q">Quem mantém a transformação alinhada e responsável por valor?</p><p class="o" data-i18n="lane3.o">Liderança, cadência, intervenção e realização de valor.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="svc.eyebrow">Portfólio · 6 serviços</span>
+      <h2 data-i18n="svc.h2">Mandatos executivos para cada decisão.</h2>
+      <p class="intro" data-i18n="svc.intro">Cada serviço tem um problema real por trás. Você recebe o mandato que corresponde ao que está enfrentando — não um cardápio.</p>
+    </div>
+
+    <!-- DECIDIR -->
+    <div class="svc-family">
+      <div class="fam-head reveal"><span class="fk">01 — Decidir</span><h3 data-i18n="fam1.h">Clareza e proteção de capital</h3><span class="fq" data-i18n="fam1.q">Onde investir, o que evitar e como reduzir a incerteza.</span></div>
+      <div class="svc-pair">
+        <article class="svc reveal"><div class="foil-top"></div><div class="in">
+          <p class="trigger" data-i18n="s1.t">Não sabemos por onde começar, onde há ROI ou quais riscos são reais.</p>
+          <h4 data-i18n="s1.n">AI Executive Diagnostic</h4>
+          <p class="sd" data-i18n="s1.d">Em três semanas: onde a IA cria valor, o que evitar, quais iniciativas merecem capital e o roadmap dos próximos 100 dias — com decisões Investir, Acelerar, Redesenhar ou Interromper.</p>
+        </div><div class="smeta" data-i18n="s1.m">3 semanas · Decisão executiva</div></article>
+        <article class="svc reveal"><div class="foil-top"></div><div class="in">
+          <p class="trigger" data-i18n="s2.t">Vamos adquirir uma empresa, contratar uma plataforma ou investir numa solução de IA.</p>
+          <h4 data-i18n="s2.n">AI Investment Due Diligence</h4>
+          <p class="sd" data-i18n="s2.d">Validação independente do investimento, do fornecedor ou do ativo de IA — viabilidade, risco, arquitetura e retorno — antes do compromisso de capital.</p>
+        </div><div class="smeta" data-i18n="s2.m">Validação de investimento</div></article>
+      </div>
+    </div>
+
+    <!-- DESENHAR -->
+    <div class="svc-family">
+      <div class="fam-head reveal"><span class="fk">02 — Desenhar</span><h3 data-i18n="fam2.h">Capacidade governada e repetível</h3><span class="fq" data-i18n="fam2.q">Como organizar pessoas, processos, tecnologia e métricas.</span></div>
+      <div class="svc-pair">
+        <article class="svc reveal"><div class="foil-top"></div><div class="in">
+          <p class="trigger" data-i18n="s3.t">Ninguém sabe quem decide, quem aprova, quem paga ou quem responde pela IA.</p>
+          <h4 data-i18n="s3.n">AI Operating Model</h4>
+          <p class="sd" data-i18n="s3.d">Accountability, governança e modelo operacional para escalar IA sem confusão, risco ou custo duplicado — com donos, ritos e métricas claras.</p>
+        </div><div class="smeta" data-i18n="s3.m">Modelo operacional</div></article>
+        <article class="svc reveal"><div class="foil-top"></div><div class="in">
+          <p class="trigger" data-i18n="s4.t">Temos muitos pilotos, vendors e ideias; não sabemos o que manter.</p>
+          <h4 data-i18n="s4.n">AI Portfolio Strategy &amp; Rationalization</h4>
+          <p class="sd" data-i18n="s4.d">Priorizar, consolidar e interromper. Um portfólio de IA com dono, métrica e retorno — sem duplicação e sem projetos órfãos consumindo capital.</p>
+        </div><div class="smeta" data-i18n="s4.m">Portfólio &amp; racionalização</div></article>
+      </div>
+    </div>
+
+    <!-- LIDERAR -->
+    <div class="svc-family">
+      <div class="fam-head reveal"><span class="fk">03 — Liderar</span><h3 data-i18n="fam3.h">Liderança e realização de valor</h3><span class="fq" data-i18n="fam3.q">Quem mantém a transformação alinhada e responsável.</span></div>
+      <div class="svc-pair">
+        <article class="svc reveal"><div class="foil-top"></div><div class="in">
+          <p class="trigger" data-i18n="s5.t">Precisamos de direção executiva contínua, mas ainda não de um CAIO integral.</p>
+          <h4 data-i18n="s5.n">Fractional Chief AI Officer</h4>
+          <p class="sd" data-i18n="s5.d">Liderança de nível CAIO ao lado de CEO, CTO e negócio — portfólio, roadmap, business cases, governança, fornecedores e KPIs. Não substitui o CTO nem lidera desenvolvimento.</p>
+        </div><div class="smeta" data-i18n="s5.m">Mandato executivo recorrente</div></article>
+        <article class="svc reveal"><div class="foil-top"></div><div class="in">
+          <p class="trigger" data-i18n="s6.t">A transformação atravessa várias áreas e precisa de governança, valor e coordenação.</p>
+          <h4 data-i18n="s6.n">AI Transformation Office</h4>
+          <p class="sd" data-i18n="s6.d">A camada executiva que coordena a transformação empresarial de ponta a ponta — governança, adoção, valor e cadência entre áreas.</p>
+        </div><div class="smeta" data-i18n="s6.m">Transformação empresarial</div></article>
+      </div>
+    </div>
+
+    <div class="svc-note reveal" data-i18n-html="svc.note"><b>AI Positioning Strategy</b> não é um serviço à parte — é um módulo do Diagnostic, do Operating Model ou do Transformation Office, para alinhar ambição, diferenciação, roadmap e narrativa para board, investidores e mercado.</div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases" class="cases">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="cases.eyebrow">Resultados</span>
+      <h2 data-i18n="cases.h2">O que muda depois do trabalho.</h2>
+      <p class="intro" data-i18n="cases.intro">Casos anonimizados por confidencialidade — o setor e a escala são reais; os nomes entram sob permissão. A métrica é o resultado, não a promessa.</p>
+    </div>
+    <div class="case-grid">
+      <article class="case reveal"><div class="foil-top"></div><div class="cin">
+        <span class="case-tag" data-i18n="case1.tag">Fortune 500 · Produção em escala</span>
+        <div class="case-metric" data-i18n="case1.metric">~100 modelos em produção</div>
+        <p class="case-line"><b data-i18n="case.problem">Problema</b><span data-i18n="case1.p">Dezenas de provas de conceito isoladas, sem caminho para produção e com custo crescente.</span></p>
+        <p class="case-line"><b data-i18n="case.action">Ação</b><span data-i18n="case1.a">Plataforma de IA governada, arquitetura reutilizável, MLOps/LLMOps e otimização de GPU.</span></p>
+        <p class="case-out" data-i18n="case1.o">−40% no custo de entrega e +80% mais rápido para desenvolver e implantar.</p>
+      </div></article>
+      <article class="case reveal"><div class="foil-top"></div><div class="cin">
+        <span class="case-tag" data-i18n="case2.tag">Saúde · Ambiente regulado</span>
+        <div class="case-metric" data-i18n="case2.metric">Fragmentação eliminada</div>
+        <p class="case-line"><b data-i18n="case.problem">Problema</b><span data-i18n="case2.p">GenAI espalhada entre áreas, sem base comum e com exposição regulatória.</span></p>
+        <p class="case-line"><b data-i18n="case.action">Ação</b><span data-i18n="case2.a">Estratégia GenAI corporativa, Prompt Store e GenAI Hub, padrões e governança.</span></p>
+        <p class="case-out" data-i18n="case2.o">Uma fundação compartilhada, governada e reutilizável — preservando os investimentos já feitos.</p>
+      </div></article>
+      <article class="case reveal"><div class="foil-top"></div><div class="cin">
+        <span class="case-tag" data-i18n="case3.tag">Modernização de engenharia</span>
+        <div class="case-metric" data-i18n="case3.metric">−50% incidentes</div>
+        <p class="case-line"><b data-i18n="case.problem">Problema</b><span data-i18n="case3.p">Entrega centrada em notebooks, incidentes frequentes e ciclos longos.</span></p>
+        <p class="case-line"><b data-i18n="case.action">Ação</b><span data-i18n="case3.a">Padrões de engenharia, CI/CD, testes e observabilidade em produção.</span></p>
+        <p class="case-out" data-i18n="case3.o">Ciclos de desenvolvimento de ~14 para 5 dias, com produção mais confiável.</p>
+      </div></article>
+      <article class="case reveal"><div class="foil-top"></div><div class="cin">
+        <span class="case-tag" data-i18n="case4.tag">Setor público · Escala nacional</span>
+        <div class="case-metric" data-i18n="case4.metric">Estratégia Nacional de IA</div>
+        <p class="case-line"><b data-i18n="case.problem">Problema</b><span data-i18n="case4.p">Agenda nacional de IA com investimento relevante, sem frameworks práticos de governança e segurança.</span></p>
+        <p class="case-line"><b data-i18n="case.action">Ação</b><span data-i18n="case4.a">Estruturação de conceitos de governança, segurança, IA responsável e prontidão.</span></p>
+        <p class="case-out" data-i18n="case4.o">Contribuição para cerca de 60% de uma versão da Estratégia Nacional de IA do Brasil (MCTI).</p>
+      </div></article>
+    </div>
+    <div class="track reveal">
+      <span class="track-lbl" data-i18n="cases.trackLbl">Trajetória</span>
+      <span class="track-items" data-i18n="cases.track">Ministério da Ciência, Tecnologia e Inovação (Brasil) · Fortune &amp; Forbes 500 · Florida Blue / GuideWell · Deloitte · Tredence · AWS (SME) · Manning Publications</span>
+    </div>
+  </div>
+</section>
+
+<!-- ACCELERATORS -->
+<section class="accel">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="acc.eyebrow">Tecnologia proprietária</span>
+      <h2 data-i18n="acc.h2">Não são só slides — são plataformas.</h2>
+      <p class="intro" data-i18n="acc.intro">Aceleradores autorais que encurtam o caminho da ambição à produção, e provam que o aconselhamento nasce de quem constrói.</p>
+    </div>
+    <div class="accel-grid">
+      <div class="acc reveal"><div class="tag">Accelerator 01</div><h3 data-i18n="acc1.n">Agentic Data Lakehouse</h3><p data-i18n="acc1.d">Prepara, faz curadoria, governa e observa dados corporativos — prontos para analytics e produtos de IA.</p></div>
+      <div class="acc reveal"><div class="tag">Accelerator 02</div><h3 data-i18n="acc2.n">Digital Twins</h3><p data-i18n="acc2.d">Arquiteturas que conectam sistemas operacionais, dados, simulação e decisão orientada por IA.</p></div>
+      <div class="acc reveal"><div class="tag">Accelerator 03</div><h3 data-i18n="acc3.n">Hybrid GenAI Backend</h3><p data-i18n="acc3.d">Inferência GPU/CPU autocontida para controle de custo, segurança e independência de um único provedor.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section id="who" class="who">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow" data-i18n="who.eyebrow">Para quem é</span>
+      <h2 data-i18n="who.h2">Definido por ambição, não por tamanho.</h2>
+      <p class="intro" data-i18n="who.intro">Organizações que passaram da experimentação e precisam construir uma capacidade real de IA — com ênfase em saúde, setores regulados e ambientes empresariais complexos.</p>
+    </div>
+    <div class="who-grid">
+      <div class="who-item reveal"><span class="k">A</span><p data-i18n="who.1">Organizações orientadas a crescimento e empresas em escala, lideradas por fundadores ou executivos.</p></div>
+      <div class="who-item reveal"><span class="k">B</span><p data-i18n="who.2">Organizações estabelecidas modernizando o modelo operacional e ambientes regulados.</p></div>
+      <div class="who-item reveal"><span class="k">C</span><p data-i18n="who.3">Organizações de saúde ambiciosas e healthtechs.</p></div>
+      <div class="who-item reveal"><span class="k">D</span><p data-i18n="who.4">Empresas conduzindo sua transformação de IA — que passaram da experimentação, mas ainda não têm capacidade empresarial de IA.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="sec-head reveal" style="max-width:none"><span class="eyebrow" data-i18n="about.eyebrow">Sobre</span></div>
+    <div class="about-grid">
+      <div class="about-photo-wrap reveal">
+        <div class="about-photo">
+          <div class="foil-top"></div>
+          <!-- ====== FOTO 2 — SOBRE ====== Substitua a div abaixo por: <img class="photo" src="SUA-FOTO-2.jpg" alt="Rodrigo Masini"> -->
+          <div class="placeholder">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <span class="lbl" data-i18n="about.photo2">Sua foto aqui</span>
+            <span class="dim">RETRATO · 4:5</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <h2>Rodrigo Masini de Melo</h2>
+        <div class="role" data-i18n="about.role">Chief AI Officer (MAGIC Research) · AI Researcher · Fractional CAIO</div>
+        <p class="bio" data-i18n="about.bio">Chief AI Officer e consultor executivo com mais de 22 anos de experiência, dirigindo IA/ML corporativa, plataformas de dados e modernização de engenharia em empresas globais — incluindo passagem pela Deloitte. Reconhecido pela AWS como especialista Top 1% em IA/ML, atuo também como AI researcher: publico artigos e padrões, participo de agências internacionais de boas práticas de IA e sou autor e revisor de livros e trabalhos técnicos na área. Fui consultor do Ministério da Ciência, Tecnologia e Inovação na Estratégia Nacional de IA do Brasil e liderei programas de IA para organizações Fortune e Forbes 500.</p>
+        <div class="chips">
+          <span class="chip" data-i18n="about.c1">22+ anos em IA e engenharia</span>
+          <span class="chip" data-i18n="about.c2">Top 1% AI/ML expert · AWS</span>
+          <span class="chip" data-i18n="about.c3">AI researcher · artigos &amp; standards</span>
+          <span class="chip" data-i18n="about.c4">Autor e revisor de livros de IA</span>
+          <span class="chip" data-i18n="about.c5">MCTI — Estratégia Nacional de IA</span>
+          <span class="chip" data-i18n="about.c6">Fortune &amp; Forbes 500 · Deloitte</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="cta.eyebrow">Próximo passo</span>
+    <h2 class="reveal" data-i18n="cta.h2">Uma conversa antes do investimento.</h2>
+    <p class="ctxt reveal" data-i18n="cta.body">Uma conversa executiva e confidencial de 30 minutos. Sem apresentação de vendas — apenas a decisão que está diante de você e como estruturá-la. Se fizer sentido, seguimos; se não, você sai com clareza.</p>
+    <div class="cta-row reveal">
+      <a href="mailto:rodrigomasini.ai@gmail.com" class="btn on-dark"><span data-i18n="cta.btn">Agendar conversa</span> <span class="arw">→</span></a>
+      <span class="or" data-i18n="cta.or">ou escreva</span>
+      <a href="mailto:rodrigomasini.ai@gmail.com" class="mail">rodrigomasini.ai@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="fbrand">Rodrigo Masini de Melo</div>
+        <p class="ftag" data-i18n="foot.tag">Consultoria executiva de IA — decidir, desenhar e liderar a transformação com governança e valor mensurável.</p>
+      </div>
+      <div class="fcol">
+        <a href="mailto:rodrigomasini.ai@gmail.com">rodrigomasini.ai@gmail.com</a>
+        <a href="https://linkedin.com/in/rmasiniexpert" target="_blank" rel="noopener">LinkedIn · rmasiniexpert →</a>
+        <a href="#contact" data-i18n="nav.cta">Agendar conversa →</a>
+      </div>
+    </div>
+    <div class="frights"><span>© 2026 Rodrigo Masini de Melo</span><span data-i18n="foot.loc">Brasil · Atuação global</span></div>
+  </div>
+</footer>
+
+<script>
+const I18N={
+ pt:{
+  "nav.cases":"Casos","nav.approach":"Abordagem","nav.services":"Serviços","nav.about":"Sobre","nav.cta":"Agendar conversa",
+  "hero.eyebrow":"Consultoria executiva de Inteligência Artificial",
+  "hero.h1":"Definir onde a IA cria valor — e transformar isso em <em>sistemas que funcionam e escalam</em>.",
+  "hero.lede":"Ajudo organizações ambiciosas — em crescimento, modernização ou saúde — a transformar iniciativas fragmentadas de IA em capacidades empresariais confiáveis, governadas e mensuráveis. Ao lado de CEOs e líderes de tecnologia, do capital à execução.",
+  "pains.eyebrow":"As dores","pains.h2":"Você reconhece algum destes?","pains.turn":"Se você se reconheceu, o problema não é falta de tecnologia. É falta de <em>decisão, estrutura e governança</em>.",
+  "pain.1":"Estamos gastando milhões e a IA não entrega.","pain.2":"Temos dezenas de iniciativas e nenhuma gera ROI.","pain.3":"Não sabemos por onde começar — nem onde está o risco real.","pain.4":"O board quer uma estratégia de IA; nós precisamos de clareza.","pain.5":"Ninguém sabe quem decide, aprova ou responde pela IA.","pain.6":"Vamos investir pesado numa plataforma ou aquisição — e não sabemos se a IA funciona mesmo.",
+  "cases.eyebrow":"Resultados","cases.h2":"O que muda depois do trabalho.","cases.intro":"Casos anonimizados por confidencialidade — o setor e a escala são reais; os nomes entram sob permissão. A métrica é o resultado, não a promessa.","cases.trackLbl":"Trajetória","cases.track":"Ministério da Ciência, Tecnologia e Inovação (Brasil) · Fortune & Forbes 500 · Florida Blue / GuideWell · Deloitte · Tredence · AWS (SME) · Manning Publications","case.problem":"Problema","case.action":"Ação",
+  "case1.tag":"Fortune 500 · Produção em escala","case1.metric":"~100 modelos em produção","case1.p":"Dezenas de provas de conceito isoladas, sem caminho para produção e com custo crescente.","case1.a":"Plataforma de IA governada, arquitetura reutilizável, MLOps/LLMOps e otimização de GPU.","case1.o":"−40% no custo de entrega e +80% mais rápido para desenvolver e implantar.",
+  "case2.tag":"Saúde · Ambiente regulado","case2.metric":"Fragmentação eliminada","case2.p":"GenAI espalhada entre áreas, sem base comum e com exposição regulatória.","case2.a":"Estratégia GenAI corporativa, Prompt Store e GenAI Hub, padrões e governança.","case2.o":"Uma fundação compartilhada, governada e reutilizável — preservando os investimentos já feitos.",
+  "case3.tag":"Modernização de engenharia","case3.metric":"−50% incidentes","case3.p":"Entrega centrada em notebooks, incidentes frequentes e ciclos longos.","case3.a":"Padrões de engenharia, CI/CD, testes e observabilidade em produção.","case3.o":"Ciclos de desenvolvimento de ~14 para 5 dias, com produção mais confiável.",
+  "case4.tag":"Setor público · Escala nacional","case4.metric":"Estratégia Nacional de IA","case4.p":"Agenda nacional de IA com investimento relevante, sem frameworks práticos de governança e segurança.","case4.a":"Estruturação de conceitos de governança, segurança, IA responsável e prontidão.","case4.o":"Contribuição para cerca de 60% de uma versão da Estratégia Nacional de IA do Brasil (MCTI).",
+  "hero.cta1":"Agendar conversa","hero.cta2":"Ver os serviços","hero.photo1":"Sua foto aqui","hero.plateRole":"Chief AI Officer<br>Fractional CAIO","hero.instHead":"Decisão de saída",
+  "dec.invest":"Investir","dec.accel":"Acelerar","dec.redesign":"Redesenhar","dec.stop":"Interromper",
+  "thesis.eyebrow":"A tese","thesis.big":"As decisões certas sobre IA são tomadas <em>antes</em> de investir milhões nas escolhas erradas.","thesis.sub":"O que você contrata não é ferramenta, hora técnica ou software — é clareza, estrutura, governança, execução e valor mensurável de negócio.",
+  "approach.eyebrow":"A abordagem","approach.h2":"Decidir. Desenhar. Liderar.","approach.intro":"Três perguntas definem cada transformação de IA. Atuo nas três — do capital à execução.",
+  "lane1.k":"Decidir","lane1.q":"Onde investir, o que evitar e como reduzir a incerteza?","lane1.o":"Clareza, priorização e proteção de capital.",
+  "lane2.k":"Desenhar","lane2.q":"Como organizar pessoas, processos, tecnologia, risco e métricas?","lane2.o":"Capacidade repetível, governada e economicamente justificável.",
+  "lane3.k":"Liderar","lane3.q":"Quem mantém a transformação alinhada e responsável por valor?","lane3.o":"Liderança, cadência, intervenção e realização de valor.",
+  "svc.eyebrow":"Portfólio · 6 serviços","svc.h2":"Mandatos executivos para cada decisão.","svc.intro":"Cada serviço tem um problema real por trás. Você recebe o mandato que corresponde ao que está enfrentando — não um cardápio.",
+  "fam1.h":"Clareza e proteção de capital","fam1.q":"Onde investir, o que evitar e como reduzir a incerteza.",
+  "s1.t":"Não sabemos por onde começar, onde há ROI ou quais riscos são reais.","s1.n":"AI Executive Diagnostic","s1.d":"Em três semanas: onde a IA cria valor, o que evitar, quais iniciativas merecem capital e o roadmap dos próximos 100 dias — com decisões Investir, Acelerar, Redesenhar ou Interromper.","s1.m":"3 semanas · Decisão executiva",
+  "s2.t":"Vamos adquirir uma empresa, contratar uma plataforma ou investir numa solução de IA.","s2.n":"AI Investment Due Diligence","s2.d":"Validação independente do investimento, do fornecedor ou do ativo de IA — viabilidade, risco, arquitetura e retorno — antes do compromisso de capital.","s2.m":"Validação de investimento",
+  "fam2.h":"Capacidade governada e repetível","fam2.q":"Como organizar pessoas, processos, tecnologia e métricas.",
+  "s3.t":"Ninguém sabe quem decide, quem aprova, quem paga ou quem responde pela IA.","s3.n":"AI Operating Model","s3.d":"Accountability, governança e modelo operacional para escalar IA sem confusão, risco ou custo duplicado — com donos, ritos e métricas claras.","s3.m":"Modelo operacional",
+  "s4.t":"Temos muitos pilotos, vendors e ideias; não sabemos o que manter.","s4.n":"AI Portfolio Strategy & Rationalization","s4.d":"Priorizar, consolidar e interromper. Um portfólio de IA com dono, métrica e retorno — sem duplicação e sem projetos órfãos consumindo capital.","s4.m":"Portfólio & racionalização",
+  "fam3.h":"Liderança e realização de valor","fam3.q":"Quem mantém a transformação alinhada e responsável.",
+  "s5.t":"Precisamos de direção executiva contínua, mas ainda não de um CAIO integral.","s5.n":"Fractional Chief AI Officer","s5.d":"Liderança de nível CAIO ao lado de CEO, CTO e negócio — portfólio, roadmap, business cases, governança, fornecedores e KPIs. Não substitui o CTO nem lidera desenvolvimento.","s5.m":"Mandato executivo recorrente",
+  "s6.t":"A transformação atravessa várias áreas e precisa de governança, valor e coordenação.","s6.n":"AI Transformation Office","s6.d":"A camada executiva que coordena a transformação empresarial de ponta a ponta — governança, adoção, valor e cadência entre áreas.","s6.m":"Transformação empresarial",
+  "svc.note":"<b>AI Positioning Strategy</b> não é um serviço à parte — é um módulo do Diagnostic, do Operating Model ou do Transformation Office, para alinhar ambição, diferenciação, roadmap e narrativa para board, investidores e mercado.",
+  "acc.eyebrow":"Tecnologia proprietária","acc.h2":"Não são só slides — são plataformas.","acc.intro":"Aceleradores autorais que encurtam o caminho da ambição à produção, e provam que o aconselhamento nasce de quem constrói.",
+  "acc1.n":"Agentic Data Lakehouse","acc1.d":"Prepara, faz curadoria, governa e observa dados corporativos — prontos para analytics e produtos de IA.",
+  "acc2.n":"Digital Twins","acc2.d":"Arquiteturas que conectam sistemas operacionais, dados, simulação e decisão orientada por IA.",
+  "acc3.n":"Hybrid GenAI Backend","acc3.d":"Inferência GPU/CPU autocontida para controle de custo, segurança e independência de um único provedor.",
+  "who.eyebrow":"Para quem é","who.h2":"Definido por ambição, não por tamanho.","who.intro":"Organizações que passaram da experimentação e precisam construir uma capacidade real de IA — com ênfase em saúde, setores regulados e ambientes empresariais complexos.",
+  "who.1":"Organizações orientadas a crescimento e empresas em escala, lideradas por fundadores ou executivos.","who.2":"Organizações estabelecidas modernizando o modelo operacional e ambientes regulados.","who.3":"Organizações de saúde ambiciosas e healthtechs.","who.4":"Empresas conduzindo sua transformação de IA — que passaram da experimentação, mas ainda não têm capacidade empresarial de IA.",
+  "about.eyebrow":"Sobre","about.photo2":"Sua foto aqui","about.role":"Chief AI Officer (MAGIC Research) · AI Researcher · Fractional CAIO",
+  "about.bio":"Chief AI Officer e consultor executivo com mais de 22 anos de experiência, dirigindo IA/ML corporativa, plataformas de dados e modernização de engenharia em empresas globais — incluindo passagem pela Deloitte. Reconhecido pela AWS como especialista Top 1% em IA/ML, atuo também como AI researcher: publico artigos e padrões, participo de agências internacionais de boas práticas de IA e sou autor e revisor de livros e trabalhos técnicos na área. Fui consultor do Ministério da Ciência, Tecnologia e Inovação na Estratégia Nacional de IA do Brasil e liderei programas de IA para organizações Fortune e Forbes 500.",
+  "about.c1":"22+ anos em IA e engenharia","about.c2":"Top 1% AI/ML expert · AWS","about.c3":"AI researcher · artigos & standards","about.c4":"Autor e revisor de livros de IA","about.c5":"MCTI — Estratégia Nacional de IA","about.c6":"Fortune & Forbes 500 · Deloitte",
+  "cta.eyebrow":"Próximo passo","cta.h2":"Uma conversa antes do investimento.","cta.body":"Uma conversa executiva e confidencial de 30 minutos. Sem apresentação de vendas — apenas a decisão que está diante de você e como estruturá-la. Se fizer sentido, seguimos; se não, você sai com clareza.","cta.btn":"Agendar conversa","cta.or":"ou escreva",
+  "foot.tag":"Consultoria executiva de IA — decidir, desenhar e liderar a transformação com governança e valor mensurável.","foot.loc":"Brasil · Atuação global"
+ },
+ en:{
+  "nav.cases":"Cases","nav.approach":"Approach","nav.services":"Services","nav.about":"About","nav.cta":"Book a conversation",
+  "hero.eyebrow":"Executive AI advisory",
+  "hero.h1":"Define where AI creates value — and turn it into <em>systems that actually work and scale</em>.",
+  "hero.lede":"I help ambitious organizations — in growth, modernization or healthcare — turn fragmented AI initiatives into reliable, governed and measurable business capabilities. Alongside CEOs and technology leaders, from capital to execution.",
+  "pains.eyebrow":"The pains","pains.h2":"Recognize any of these?","pains.turn":"If that sounds like you, the problem isn't a lack of technology. It's a lack of <em>decision, structure and governance</em>.",
+  "pain.1":"We're spending millions and AI isn't delivering.","pain.2":"We have dozens of initiatives and none generate ROI.","pain.3":"We don't know where to start — or where the real risk is.","pain.4":"The board wants an AI strategy; we need clarity.","pain.5":"Nobody knows who decides, approves or owns AI.","pain.6":"We're about to invest heavily in a platform or acquisition — and we don't know if the AI even works.",
+  "cases.eyebrow":"Results","cases.h2":"What changes after the work.","cases.intro":"Cases anonymized for confidentiality — the sector and scale are real; names on request. The metric is the result, not the promise.","cases.trackLbl":"Track record","cases.track":"Ministry of Science, Technology & Innovation (Brazil) · Fortune & Forbes 500 · Florida Blue / GuideWell · Deloitte · Tredence · AWS (SME) · Manning Publications","case.problem":"Problem","case.action":"Action",
+  "case1.tag":"Fortune 500 · Production at scale","case1.metric":"~100 models in production","case1.p":"Dozens of isolated proofs of concept, no path to production, and rising cost.","case1.a":"A governed AI platform, reusable architecture, MLOps/LLMOps and GPU optimization.","case1.o":"−40% delivery cost and +80% faster to develop and deploy.",
+  "case2.tag":"Healthcare · Regulated","case2.metric":"Fragmentation eliminated","case2.p":"GenAI scattered across teams, no shared foundation, and regulatory exposure.","case2.a":"Enterprise GenAI strategy, Prompt Store and GenAI Hub, standards and governance.","case2.o":"A shared, governed, reusable foundation — preserving existing investments.",
+  "case3.tag":"Engineering modernization","case3.metric":"−50% incidents","case3.p":"Notebook-centric delivery, frequent incidents and long cycles.","case3.a":"Engineering standards, CI/CD, testing and production observability.","case3.o":"Development cycles from ~14 to 5 days, with more reliable production.",
+  "case4.tag":"Public sector · National scale","case4.metric":"National AI Strategy","case4.p":"A national AI agenda with major investment, but no practical governance and security frameworks.","case4.a":"Structuring governance, security, responsible-AI and readiness concepts.","case4.o":"Contributed to roughly 60% of a version of Brazil's National AI Strategy (MCTI).",
+  "hero.cta1":"Book a conversation","hero.cta2":"See the services","hero.photo1":"Your photo here","hero.plateRole":"Chief AI Officer<br>Fractional CAIO","hero.instHead":"Decision output",
+  "dec.invest":"Invest","dec.accel":"Accelerate","dec.redesign":"Redesign","dec.stop":"Stop",
+  "thesis.eyebrow":"The thesis","thesis.big":"The right AI decisions are made <em>before</em> millions are invested in the wrong ones.","thesis.sub":"What you buy isn't tooling, billable hours or software — it's clarity, structure, governance, execution and measurable business value.",
+  "approach.eyebrow":"The approach","approach.h2":"Decide. Design. Lead.","approach.intro":"Three questions define every AI transformation. I work across all three — from capital to execution.",
+  "lane1.k":"Decide","lane1.q":"Where to invest, what to avoid, and how to reduce uncertainty?","lane1.o":"Clarity, prioritization and capital protection.",
+  "lane2.k":"Design","lane2.q":"How to organize people, process, technology, risk and metrics?","lane2.o":"A repeatable, governed and economically justified capability.",
+  "lane3.k":"Lead","lane3.q":"Who keeps the transformation aligned and accountable for value?","lane3.o":"Leadership, cadence, intervention and value realization.",
+  "svc.eyebrow":"Portfolio · 6 services","svc.h2":"Executive mandates for every decision.","svc.intro":"Each service exists because of a real problem. You get the mandate that matches what you're facing — not a menu.",
+  "fam1.h":"Clarity and capital protection","fam1.q":"Where to invest, what to avoid, and how to reduce uncertainty.",
+  "s1.t":"We don't know where to start, where the ROI is, or which risks are real.","s1.n":"AI Executive Diagnostic","s1.d":"In three weeks: where AI creates value, what to avoid, which initiatives deserve capital, and the next 100-day roadmap — with Invest, Accelerate, Redesign or Stop decisions.","s1.m":"3 weeks · Executive decision",
+  "s2.t":"We're about to acquire a company, hire a platform or invest in an AI solution.","s2.n":"AI Investment Due Diligence","s2.d":"Independent validation of the investment, vendor or AI asset — feasibility, risk, architecture and return — before the capital commitment.","s2.m":"Investment validation",
+  "fam2.h":"A governed, repeatable capability","fam2.q":"How to organize people, process, technology and metrics.",
+  "s3.t":"Nobody knows who decides, who approves, who pays or who owns AI.","s3.n":"AI Operating Model","s3.d":"Accountability, governance and an operating model to scale AI without confusion, risk or duplicated cost — with owners, rituals and clear metrics.","s3.m":"Operating model",
+  "s4.t":"We have too many pilots, vendors and ideas; we don't know what to keep.","s4.n":"AI Portfolio Strategy & Rationalization","s4.d":"Prioritize, consolidate and stop. An AI portfolio with an owner, a metric and a return — no duplication and no orphaned projects burning capital.","s4.m":"Portfolio & rationalization",
+  "fam3.h":"Leadership and value realization","fam3.q":"Who keeps the transformation aligned and accountable.",
+  "s5.t":"We need ongoing executive direction, but not yet a full-time CAIO.","s5.n":"Fractional Chief AI Officer","s5.d":"CAIO-level leadership alongside CEO, CTO and the business — portfolio, roadmap, business cases, governance, vendors and KPIs. It doesn't replace the CTO or run development.","s5.m":"Ongoing executive mandate",
+  "s6.t":"The transformation crosses many areas and needs governance, value and coordination.","s6.n":"AI Transformation Office","s6.d":"The executive layer that coordinates enterprise transformation end to end — governance, adoption, value and cadence across areas.","s6.m":"Enterprise transformation",
+  "svc.note":"<b>AI Positioning Strategy</b> isn't a separate service — it's a module within the Diagnostic, the Operating Model or the Transformation Office, to align ambition, differentiation, roadmap and narrative for board, investors and market.",
+  "acc.eyebrow":"Proprietary technology","acc.h2":"Not just slides — platforms.","acc.intro":"Original accelerators that shorten the path from ambition to production, and prove the advice comes from someone who builds.",
+  "acc1.n":"Agentic Data Lakehouse","acc1.d":"Continuously prepares, curates, governs and observes enterprise data — ready for analytics and AI products.",
+  "acc2.n":"Digital Twins","acc2.d":"Architectures connecting operational systems, enterprise data, simulation and AI-driven decision support.",
+  "acc3.n":"Hybrid GenAI Backend","acc3.d":"Self-contained GPU/CPU inference for cost control, security and independence from a single serving model.",
+  "who.eyebrow":"Who this is for","who.h2":"Defined by ambition, not by size.","who.intro":"Organizations past experimentation that need to build a real AI capability — with emphasis on healthcare, regulated sectors and complex enterprise environments.",
+  "who.1":"Growth-oriented organizations and scaling enterprises, founder- or executive-led.","who.2":"Established organizations modernizing their operating model, and regulated environments.","who.3":"Ambitious healthcare organizations and healthtechs.","who.4":"Companies navigating their AI transformation — past experimentation, but without an enterprise AI capability yet.",
+  "about.eyebrow":"About","about.photo2":"Your photo here","about.role":"Chief AI Officer (MAGIC Research) · AI Researcher · Fractional CAIO",
+  "about.bio":"Chief AI Officer and executive advisor with 22+ years of experience directing enterprise AI/ML, data platforms and engineering modernization across global enterprises — including Deloitte. Recognized by AWS as a Top 1% AI/ML expert, I also work as an AI researcher: I publish articles and standards, take part in international AI best-practice bodies, and author and review books and technical work in the field. I advised Brazil's Ministry of Science, Technology and Innovation on the country's National AI Strategy and led AI programs for Fortune and Forbes 500 organizations.",
+  "about.c1":"22+ years in AI & engineering","about.c2":"Top 1% AI/ML expert · AWS","about.c3":"AI researcher · papers & standards","about.c4":"Author & reviewer, AI books","about.c5":"MCTI — National AI Strategy","about.c6":"Fortune & Forbes 500 · Deloitte",
+  "cta.eyebrow":"Next step","cta.h2":"A conversation before the investment.","cta.body":"A confidential 30-minute executive conversation. No sales deck — just the decision in front of you and how to structure it. If it fits, we continue; if not, you leave with clarity.","cta.btn":"Book a conversation","cta.or":"or write to",
+  "foot.tag":"Executive AI advisory — decide, design and lead the transformation with governance and measurable value.","foot.loc":"Brazil · Global"
+ }
+};
+function setLang(l){
+ const d=I18N[l];document.documentElement.lang=l==="pt"?"pt-BR":"en";
+ document.querySelectorAll("[data-i18n]").forEach(e=>{const k=e.getAttribute("data-i18n");if(d[k]!=null)e.textContent=d[k]});
+ document.querySelectorAll("[data-i18n-html]").forEach(e=>{const k=e.getAttribute("data-i18n-html");if(d[k]!=null)e.innerHTML=d[k]});
+ document.querySelectorAll(".lang button").forEach(b=>b.classList.toggle("on",b.dataset.lang===l));
+}
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>setLang(b.dataset.lang)));
+const nav=document.getElementById("nav");addEventListener("scroll",()=>nav.classList.toggle("scrolled",scrollY>12),{passive:true});
+const mb=document.getElementById("menuBtn"),mp=document.getElementById("mobilePanel");
+mb.addEventListener("click",()=>{const o=mp.classList.toggle("open");mb.setAttribute("aria-expanded",o)});
+mp.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{mp.classList.remove("open");mb.setAttribute("aria-expanded",false)}));
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}})},{threshold:.12,rootMargin:"0px 0px -8% 0px"});
+document.querySelectorAll(".reveal,.lane").forEach(e=>io.observe(e));
+(function(){if(matchMedia("(prefers-reduced-motion:reduce)").matches)return;const s=[...document.querySelectorAll(".instrument .stop")];if(!s.length)return;let i=0;setInterval(()=>{s.forEach(x=>x.classList.remove("active"));i=(i+1)%s.length;s[i].classList.add("active")},2600)})();
+</script>
+</body>
+</html>
