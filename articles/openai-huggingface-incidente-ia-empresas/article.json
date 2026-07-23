@@ -1,0 +1,50 @@
+{
+  "schema_version": "lemurian-pages/v1",
+  "id": "openai-huggingface-incidente-ia-empresas",
+  "slug": "openai-huggingface-incidente-ia-empresas",
+  "canonical_url": "https://karuata.github.io/ApexAI/articles/openai-huggingface-incidente-ia-empresas/",
+  "title": "Incidente OpenAI-Hugging Face: estratégia de marketing ou sinal de descontrole da IA?",
+  "seo_title": "Incidente OpenAI-Hugging Face: estratégia de marketing ou sinal de descontrole da IA? — Rodrigo Masini",
+  "description": "Uma leitura executiva sobre o incidente OpenAI-Hugging Face, o debate entre marketing e descontrole, e o que empresas devem mudar na governança de IA.",
+  "language": "pt-BR",
+  "status": "published",
+  "article_type": "AI Governance",
+  "target_audience": "executives",
+  "published_at": "2026-07-23",
+  "updated_at": "2026-07-23",
+  "author": {
+    "name": "Rodrigo Masini de Melo",
+    "url": "https://karuata.github.io/ApexAI/"
+  },
+  "body": {
+    "format": "html",
+    "path": "body.html",
+    "markdown_path": null
+  },
+  "outline_path": null,
+  "featured_image": "../../assets/articles/openai-huggingface-incidente/sandbox-network.png",
+  "images": [
+    "../../assets/articles/openai-huggingface-incidente/sandbox-network.png",
+    "../../assets/articles/openai-huggingface-incidente/ai-governance-war-room.png"
+  ],
+  "sources": {
+    "arxiv_ids": [],
+    "paper_titles": [],
+    "source_file_names": [
+      "OpenAI - Hugging Face model evaluation security incident",
+      "Hugging Face - Security incident disclosure July 2026",
+      "AP - OpenAI blamed a hacking event on its AI models going rogue"
+    ]
+  },
+  "metrics": {
+    "word_count": 1540,
+    "reading_time_minutes": 7,
+    "flesch_score": 0,
+    "quality_score": 0
+  },
+  "generation": {
+    "generator": "Lemurian",
+    "mode": "editorial",
+    "completed_at": "2026-07-23T00:00:00-04:00"
+  }
+}

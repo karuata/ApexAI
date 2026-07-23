@@ -6,5 +6,36 @@
     "base_url": "https://karuata.github.io/ApexAI",
     "language_default": "pt-BR"
   },
-  "articles": []
+  "articles": [
+    {
+      "id": "openai-huggingface-incidente-ia-empresas",
+      "slug": "openai-huggingface-incidente-ia-empresas",
+      "url": "articles/openai-huggingface-incidente-ia-empresas/",
+      "title": "Incidente OpenAI-Hugging Face: estratégia de marketing ou sinal de descontrole da IA?",
+      "description": "Uma leitura executiva sobre o incidente OpenAI-Hugging Face, o debate entre marketing e descontrole, e o que empresas devem mudar na governança de IA.",
+      "language": "pt-BR",
+      "status": "published",
+      "article_type": "AI Governance",
+      "published_at": "2026-07-23",
+      "updated_at": "2026-07-23",
+      "word_count": 1540,
+      "reading_time_minutes": 7,
+      "featured_image": "../assets/articles/openai-huggingface-incidente/sandbox-network.png"
+    },
+    {
+      "id": "openai-huggingface-ai-incident-enterprise-governance",
+      "slug": "openai-huggingface-ai-incident-enterprise-governance",
+      "url": "articles/openai-huggingface-ai-incident-enterprise-governance/",
+      "title": "OpenAI-Hugging Face Incident: marketing strategy or a sign of AI control failure?",
+      "description": "An executive analysis of the OpenAI-Hugging Face incident, what it says about AI agent governance, and how enterprises should respond.",
+      "language": "en",
+      "status": "published",
+      "article_type": "AI Governance",
+      "published_at": "2026-07-23",
+      "updated_at": "2026-07-23",
+      "word_count": 1460,
+      "reading_time_minutes": 6,
+      "featured_image": "../assets/articles/openai-huggingface-incidente/sandbox-network.png"
+    }
+  ]
 }
