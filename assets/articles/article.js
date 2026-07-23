@@ -56,7 +56,9 @@ function localizeArticle(article){
 
 function renderArticles(){
   const mount = document.getElementById("articlesMount");
-  const articles = (manifest.articles || []).filter((article) => article.status === "published");
+  const articles = (manifest.articles || [])
+    .filter((article) => article.status === "published")
+    .sort((a, b) => String(b.published_at || "").localeCompare(String(a.published_at || "")));
   if (!articles.length) {
     mount.innerHTML = `<div class="empty"><h2>${t("emptyTitle")}</h2></div>`;
     return;

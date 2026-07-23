@@ -1,0 +1,40 @@
+{
+  "schema_version": "lemurian-pages/v1",
+  "id": "quando-ia-sai-do-piloto",
+  "slug": "quando-ia-sai-do-piloto",
+  "canonical_url": "https://karuata.github.io/ApexAI/articles/quando-ia-sai-do-piloto/",
+  "title": "What changes when AI leaves the pilot stage",
+  "seo_title": "What changes when AI leaves the pilot stage — Rodrigo Masini",
+  "description": "Practical lessons from platforms, healthcare, engineering and public strategy when the metric has to be results.",
+  "language": "en",
+  "language_default": "en",
+  "status": "published",
+  "article_type": "Case Note",
+  "target_audience": "executives",
+  "published_at": "2026-07-18",
+  "updated_at": "2026-07-23",
+  "author": {"name": "Rodrigo Masini de Melo", "url": "https://karuata.github.io/ApexAI/"},
+  "body": {"format": "html", "path": "body.en.html", "markdown_path": null},
+  "featured_image": null,
+  "images": [],
+  "metrics": {"word_count": 880, "reading_time_minutes": 4},
+  "translations": {
+    "en": {
+      "title": "What changes when AI leaves the pilot stage",
+      "seo_title": "What changes when AI leaves the pilot stage — Rodrigo Masini",
+      "description": "Practical lessons from platforms, healthcare, engineering and public strategy when the metric has to be results.",
+      "language": "en",
+      "body": {"format": "html", "path": "body.en.html", "markdown_path": null},
+      "metrics": {"word_count": 880, "reading_time_minutes": 4}
+    },
+    "pt": {
+      "title": "O que muda quando IA sai do piloto",
+      "seo_title": "O que muda quando IA sai do piloto — Rodrigo Masini",
+      "description": "Lições práticas de plataformas, saúde, engenharia e estratégia pública quando a métrica precisa ser resultado.",
+      "language": "pt-BR",
+      "body": {"format": "html", "path": "body.pt.html", "markdown_path": null},
+      "metrics": {"word_count": 930, "reading_time_minutes": 4}
+    }
+  },
+  "generation": {"generator": "Lemurian™", "mode": "editorial", "completed_at": "2026-07-23T00:00:00-04:00"}
+}

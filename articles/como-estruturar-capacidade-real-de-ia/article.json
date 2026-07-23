@@ -1,0 +1,40 @@
+{
+  "schema_version": "lemurian-pages/v1",
+  "id": "como-estruturar-capacidade-real-de-ia",
+  "slug": "como-estruturar-capacidade-real-de-ia",
+  "canonical_url": "https://karuata.github.io/ApexAI/articles/como-estruturar-capacidade-real-de-ia/",
+  "title": "How to structure a real AI capability",
+  "seo_title": "How to structure a real AI capability — Rodrigo Masini",
+  "description": "The operating design that connects people, metrics, technology and accountability without turning AI into theater.",
+  "language": "en",
+  "language_default": "en",
+  "status": "published",
+  "article_type": "Field Note",
+  "target_audience": "executives",
+  "published_at": "2026-07-19",
+  "updated_at": "2026-07-23",
+  "author": {"name": "Rodrigo Masini de Melo", "url": "https://karuata.github.io/ApexAI/"},
+  "body": {"format": "html", "path": "body.en.html", "markdown_path": null},
+  "featured_image": null,
+  "images": [],
+  "metrics": {"word_count": 900, "reading_time_minutes": 4},
+  "translations": {
+    "en": {
+      "title": "How to structure a real AI capability",
+      "seo_title": "How to structure a real AI capability — Rodrigo Masini",
+      "description": "The operating design that connects people, metrics, technology and accountability without turning AI into theater.",
+      "language": "en",
+      "body": {"format": "html", "path": "body.en.html", "markdown_path": null},
+      "metrics": {"word_count": 900, "reading_time_minutes": 4}
+    },
+    "pt": {
+      "title": "Como estruturar uma capacidade real de IA",
+      "seo_title": "Como estruturar uma capacidade real de IA — Rodrigo Masini",
+      "description": "O desenho operacional que conecta pessoas, métricas, tecnologia e accountability sem transformar IA em teatro.",
+      "language": "pt-BR",
+      "body": {"format": "html", "path": "body.pt.html", "markdown_path": null},
+      "metrics": {"word_count": 960, "reading_time_minutes": 4}
+    }
+  },
+  "generation": {"generator": "Lemurian™", "mode": "editorial", "completed_at": "2026-07-23T00:00:00-04:00"}
+}

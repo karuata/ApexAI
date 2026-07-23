@@ -1,0 +1,40 @@
+{
+  "schema_version": "lemurian-pages/v1",
+  "id": "onde-a-ia-cria-valor-antes-do-investimento",
+  "slug": "onde-a-ia-cria-valor-antes-do-investimento",
+  "canonical_url": "https://karuata.github.io/ApexAI/articles/onde-a-ia-cria-valor-antes-do-investimento/",
+  "title": "Where AI creates value before the investment",
+  "seo_title": "Where AI creates value before the investment — Rodrigo Masini",
+  "description": "An executive note on separating ambition, risk and capital before AI pilots become recurring cost.",
+  "language": "en",
+  "language_default": "en",
+  "status": "published",
+  "article_type": "Decision Note",
+  "target_audience": "executives",
+  "published_at": "2026-07-20",
+  "updated_at": "2026-07-23",
+  "author": {"name": "Rodrigo Masini de Melo", "url": "https://karuata.github.io/ApexAI/"},
+  "body": {"format": "html", "path": "body.en.html", "markdown_path": null},
+  "featured_image": null,
+  "images": [],
+  "metrics": {"word_count": 850, "reading_time_minutes": 4},
+  "translations": {
+    "en": {
+      "title": "Where AI creates value before the investment",
+      "seo_title": "Where AI creates value before the investment — Rodrigo Masini",
+      "description": "An executive note on separating ambition, risk and capital before AI pilots become recurring cost.",
+      "language": "en",
+      "body": {"format": "html", "path": "body.en.html", "markdown_path": null},
+      "metrics": {"word_count": 850, "reading_time_minutes": 4}
+    },
+    "pt": {
+      "title": "Onde a IA cria valor antes do investimento",
+      "seo_title": "Onde a IA cria valor antes do investimento — Rodrigo Masini",
+      "description": "Uma nota executiva para separar ambição, risco e capital antes que pilotos de IA virem custo recorrente.",
+      "language": "pt-BR",
+      "body": {"format": "html", "path": "body.pt.html", "markdown_path": null},
+      "metrics": {"word_count": 920, "reading_time_minutes": 4}
+    }
+  },
+  "generation": {"generator": "Lemurian™", "mode": "editorial", "completed_at": "2026-07-23T00:00:00-04:00"}
+}

@@ -1,6 +1,6 @@
 {
   "schema_version": "lemurian-pages/v1",
-  "generated_at": null,
+  "generated_at": "2026-07-23",
   "site": {
     "title": "Rodrigo Masini Executive AI Advisory",
     "base_url": "https://karuata.github.io/ApexAI",
@@ -36,6 +36,102 @@
           "language": "pt-BR",
           "word_count": 1540,
           "reading_time_minutes": 7
+        }
+      }
+    },
+    {
+      "id": "onde-a-ia-cria-valor-antes-do-investimento",
+      "slug": "onde-a-ia-cria-valor-antes-do-investimento",
+      "url": "articles/onde-a-ia-cria-valor-antes-do-investimento/",
+      "title": "Where AI creates value before the investment",
+      "description": "An executive note on separating ambition, risk and capital before AI pilots become recurring cost.",
+      "language": "en",
+      "language_default": "en",
+      "status": "published",
+      "article_type": "Decision Note",
+      "published_at": "2026-07-20",
+      "updated_at": "2026-07-23",
+      "word_count": 850,
+      "reading_time_minutes": 4,
+      "featured_image": null,
+      "translations": {
+        "en": {
+          "title": "Where AI creates value before the investment",
+          "description": "An executive note on separating ambition, risk and capital before AI pilots become recurring cost.",
+          "language": "en",
+          "word_count": 850,
+          "reading_time_minutes": 4
+        },
+        "pt": {
+          "title": "Onde a IA cria valor antes do investimento",
+          "description": "Uma nota executiva para separar ambição, risco e capital antes que pilotos de IA virem custo recorrente.",
+          "language": "pt-BR",
+          "word_count": 920,
+          "reading_time_minutes": 4
+        }
+      }
+    },
+    {
+      "id": "como-estruturar-capacidade-real-de-ia",
+      "slug": "como-estruturar-capacidade-real-de-ia",
+      "url": "articles/como-estruturar-capacidade-real-de-ia/",
+      "title": "How to structure a real AI capability",
+      "description": "The operating design that connects people, metrics, technology and accountability without turning AI into theater.",
+      "language": "en",
+      "language_default": "en",
+      "status": "published",
+      "article_type": "Field Note",
+      "published_at": "2026-07-19",
+      "updated_at": "2026-07-23",
+      "word_count": 900,
+      "reading_time_minutes": 4,
+      "featured_image": null,
+      "translations": {
+        "en": {
+          "title": "How to structure a real AI capability",
+          "description": "The operating design that connects people, metrics, technology and accountability without turning AI into theater.",
+          "language": "en",
+          "word_count": 900,
+          "reading_time_minutes": 4
+        },
+        "pt": {
+          "title": "Como estruturar uma capacidade real de IA",
+          "description": "O desenho operacional que conecta pessoas, métricas, tecnologia e accountability sem transformar IA em teatro.",
+          "language": "pt-BR",
+          "word_count": 960,
+          "reading_time_minutes": 4
+        }
+      }
+    },
+    {
+      "id": "quando-ia-sai-do-piloto",
+      "slug": "quando-ia-sai-do-piloto",
+      "url": "articles/quando-ia-sai-do-piloto/",
+      "title": "What changes when AI leaves the pilot stage",
+      "description": "Practical lessons from platforms, healthcare, engineering and public strategy when the metric has to be results.",
+      "language": "en",
+      "language_default": "en",
+      "status": "published",
+      "article_type": "Case Note",
+      "published_at": "2026-07-18",
+      "updated_at": "2026-07-23",
+      "word_count": 880,
+      "reading_time_minutes": 4,
+      "featured_image": null,
+      "translations": {
+        "en": {
+          "title": "What changes when AI leaves the pilot stage",
+          "description": "Practical lessons from platforms, healthcare, engineering and public strategy when the metric has to be results.",
+          "language": "en",
+          "word_count": 880,
+          "reading_time_minutes": 4
+        },
+        "pt": {
+          "title": "O que muda quando IA sai do piloto",
+          "description": "Lições práticas de plataformas, saúde, engenharia e estratégia pública quando a métrica precisa ser resultado.",
+          "language": "pt-BR",
+          "word_count": 930,
+          "reading_time_minutes": 4
         }
       }
     }
