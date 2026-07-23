@@ -656,7 +656,7 @@
     </div>
     <div class="article-grid" id="homeArticlesMount"></div>
     <div class="article-archive reveal">
-      <a href="articles/" class="btn ghost"><span data-i18n="articles.archive">Ver arquivo de artigos</span> <span class="arw">→</span></a>
+      <a href="articles/" class="btn ghost"><span data-i18n="articles.archive">Ver mais artigos</span> <span class="arw">→</span></a>
     </div>
   </div>
 </section>
@@ -734,7 +734,7 @@ const I18N={
   "about.eyebrow":"Sobre","about.photo2":"Sua foto aqui","about.role":"Chief AI Officer (MAGIC Research) · AI Researcher · Fractional CAIO",
   "about.bio":"Chief AI Officer e consultor executivo com mais de 22 anos de experiência, dirigindo IA/ML corporativa, plataformas de dados e modernização de engenharia em empresas globais — incluindo passagem pela Deloitte. Reconhecido pela AWS como especialista Top 1% em IA/ML, atuo também como AI researcher: publico artigos e padrões, participo de agências internacionais de boas práticas de IA e sou autor e revisor de livros e trabalhos técnicos na área. Fui consultor do Ministério da Ciência, Tecnologia e Inovação na Estratégia Nacional de IA do Brasil e liderei programas de IA para organizações Fortune e Forbes 500.",
   "about.c1":"22+ anos em IA e engenharia","about.c2":"Top 1% AI/ML expert · AWS","about.c3":"AI researcher · artigos & standards","about.c4":"Autor e revisor de livros de IA","about.c5":"MCTI — Estratégia Nacional de IA","about.c6":"Fortune & Forbes 500 · Deloitte",
-  "articles.eyebrow":"Artigos","articles.h2":"Notas executivas sobre IA aplicada.","articles.intro":"Leituras curtas para aprofundar as decisões por trás da transformação: onde investir, como desenhar a capacidade e o que os casos reais ensinam.","articles.archive":"Ver arquivo de artigos","article.status":"No site","article.read":"Ler artigo","article.soon":"Em breve",
+  "articles.eyebrow":"Artigos","articles.h2":"Notas executivas sobre IA aplicada.","articles.intro":"Leituras curtas para aprofundar as decisões por trás da transformação: onde investir, como desenhar a capacidade e o que os casos reais ensinam.","articles.archive":"Ver mais artigos","article.status":"No site","article.read":"Ler artigo","article.soon":"Em breve",
   "cta.eyebrow":"Próximo passo","cta.h2":"Uma conversa antes do investimento.","cta.body":"Uma conversa executiva e confidencial de 30 minutos. Sem apresentação de vendas — apenas a decisão que está diante de você e como estruturá-la. Se fizer sentido, seguimos; se não, você sai com clareza.","cta.btn":"Agendar conversa","cta.or":"ou escreva",
   "foot.tag":"Consultoria executiva de IA — decidir, desenhar e liderar a transformação com governança e valor mensurável.","foot.loc":"Brasil · Atuação global"
  },
@@ -777,7 +777,7 @@ const I18N={
   "about.eyebrow":"About","about.photo2":"Your photo here","about.role":"Chief AI Officer (MAGIC Research) · AI Researcher · Fractional CAIO",
   "about.bio":"Chief AI Officer and executive advisor with 22+ years of experience directing enterprise AI/ML, data platforms and engineering modernization across global enterprises — including Deloitte. Recognized by AWS as a Top 1% AI/ML expert, I also work as an AI researcher: I publish articles and standards, take part in international AI best-practice bodies, and author and review books and technical work in the field. I advised Brazil's Ministry of Science, Technology and Innovation on the country's National AI Strategy and led AI programs for Fortune and Forbes 500 organizations.",
   "about.c1":"22+ years in AI & engineering","about.c2":"Top 1% AI/ML expert · AWS","about.c3":"AI researcher · papers & standards","about.c4":"Author & reviewer, AI books","about.c5":"MCTI — National AI Strategy","about.c6":"Fortune & Forbes 500 · Deloitte",
-  "articles.eyebrow":"Articles","articles.h2":"Executive notes on applied AI.","articles.intro":"Short reads that go deeper into the decisions behind transformation: where to invest, how to design the capability, and what real cases teach.","articles.archive":"View article archive","article.status":"On site","article.read":"Read article","article.soon":"Coming soon",
+  "articles.eyebrow":"Articles","articles.h2":"Executive notes on applied AI.","articles.intro":"Short reads that go deeper into the decisions behind transformation: where to invest, how to design the capability, and what real cases teach.","articles.archive":"View more articles","article.status":"On site","article.read":"Read article","article.soon":"Coming soon",
   "cta.eyebrow":"Next step","cta.h2":"A conversation before the investment.","cta.body":"A confidential 30-minute executive conversation. No sales deck — just the decision in front of you and how to structure it. If it fits, we continue; if not, you leave with clarity.","cta.btn":"Book a conversation","cta.or":"or write to",
   "foot.tag":"Executive AI advisory — decide, design and lead the transformation with governance and measurable value.","foot.loc":"Brazil · Global"
  }
@@ -798,7 +798,7 @@ function renderHomeArticles(){
  const mount=document.getElementById("homeArticlesMount");
  if(!mount)return;
  const d=I18N[currentLang]||I18N.en;
- const articles=[...homeArticles].sort((a,b)=>String(b.published_at||"").localeCompare(String(a.published_at||"")));
+ const articles=[...homeArticles].sort((a,b)=>String(b.published_at||"").localeCompare(String(a.published_at||""))).slice(0,3);
  mount.innerHTML=articles.map(article=>{
   const view=localizeHomeArticle(article,currentLang);
   const isPublished=article.status==="published"&&article.url;
