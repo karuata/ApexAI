@@ -17,7 +17,7 @@ const I18N = {
   }
 };
 
-let activeLang = "pt";
+let activeLang = "en";
 let manifest = { articles: [] };
 
 function t(key){
@@ -26,6 +26,7 @@ function t(key){
 
 function setLang(lang){
   activeLang = lang;
+  localStorage.setItem("apexArticlesLang", lang);
   document.documentElement.lang = lang === "pt" ? "pt-BR" : "en";
   document.querySelectorAll(".lang button").forEach((button) => {
     button.classList.toggle("on", button.dataset.lang === lang);
@@ -41,6 +42,18 @@ function normalizeLang(language){
   return "en";
 }
 
+function localizeArticle(article){
+  const translations = article.translations || {};
+  const fallbackLang = normalizeLang(article.language_default || article.language);
+  const localized = translations[activeLang] || translations[fallbackLang] || {};
+  return {
+    ...article,
+    ...localized,
+    word_count: localized.word_count || localized.metrics?.word_count || article.word_count,
+    reading_time_minutes: localized.reading_time_minutes || localized.metrics?.reading_time_minutes || article.reading_time_minutes
+  };
+}
+
 function renderArticles(){
   const mount = document.getElementById("articlesMount");
   const articles = (manifest.articles || []).filter((article) => article.status === "published");
@@ -49,18 +62,19 @@ function renderArticles(){
     return;
   }
   mount.innerHTML = `<div class="article-grid">${articles.map((article) => {
-    const minutes = article.reading_time_minutes || Math.max(1, Math.ceil((article.word_count || 0) / 250));
-    const language = normalizeLang(article.language).toUpperCase();
-    const meta = [language, article.article_type, article.published_at].filter(Boolean).join(" · ");
+    const view = localizeArticle(article);
+    const minutes = view.reading_time_minutes || Math.max(1, Math.ceil((view.word_count || 0) / 250));
+    const language = article.translations ? activeLang.toUpperCase() : normalizeLang(view.language).toUpperCase();
+    const meta = [language, view.article_type, view.published_at].filter(Boolean).join(" · ");
     return `<article class="article-card">
       <div class="foil-top"></div>
       <div class="in">
         <span class="meta">${meta}</span>
-        <h2>${article.title || "Untitled"}</h2>
-        <p>${article.description || ""}</p>
+        <h2>${view.title || "Untitled"}</h2>
+        <p>${view.description || ""}</p>
         <div class="foot">
           <a href="../${article.url || ""}">${t("read")}</a>
-          <span>${minutes} ${t("minutes")} · ${article.word_count || 0} ${t("words")}</span>
+          <span>${minutes} ${t("minutes")} · ${view.word_count || 0} ${t("words")}</span>
         </div>
       </div>
     </article>`;
@@ -79,4 +93,4 @@ document.querySelectorAll(".lang button").forEach((button) => {
   button.addEventListener("click", () => setLang(button.dataset.lang));
 });
 
-setLang("pt");
+setLang(localStorage.getItem("apexArticlesLang") || "en");

@@ -3,10 +3,11 @@
   "id": "openai-huggingface-incidente-ia-empresas",
   "slug": "openai-huggingface-incidente-ia-empresas",
   "canonical_url": "https://karuata.github.io/ApexAI/articles/openai-huggingface-incidente-ia-empresas/",
-  "title": "Incidente OpenAI-Hugging Face: estratégia de marketing ou sinal de descontrole da IA?",
-  "seo_title": "Incidente OpenAI-Hugging Face: estratégia de marketing ou sinal de descontrole da IA? — Rodrigo Masini",
-  "description": "Uma leitura executiva sobre o incidente OpenAI-Hugging Face, o debate entre marketing e descontrole, e o que empresas devem mudar na governança de IA.",
-  "language": "pt-BR",
+  "title": "OpenAI-Hugging Face Incident: marketing strategy or a sign of AI control failure?",
+  "seo_title": "OpenAI-Hugging Face Incident: marketing strategy or a sign of AI control failure? — Rodrigo Masini",
+  "description": "An executive analysis of the OpenAI-Hugging Face incident, what it says about AI agent governance, and how enterprises should respond.",
+  "language": "en",
+  "language_default": "en",
   "status": "published",
   "article_type": "AI Governance",
   "target_audience": "executives",
@@ -18,7 +19,7 @@
   },
   "body": {
     "format": "html",
-    "path": "body.html",
+    "path": "body.en.html",
     "markdown_path": null
   },
   "outline_path": null,
@@ -37,13 +38,45 @@
     ]
   },
   "metrics": {
-    "word_count": 1540,
-    "reading_time_minutes": 7,
+    "word_count": 1460,
+    "reading_time_minutes": 6,
     "flesch_score": 0,
     "quality_score": 0
   },
+  "translations": {
+    "en": {
+      "title": "OpenAI-Hugging Face Incident: marketing strategy or a sign of AI control failure?",
+      "seo_title": "OpenAI-Hugging Face Incident: marketing strategy or a sign of AI control failure? — Rodrigo Masini",
+      "description": "An executive analysis of the OpenAI-Hugging Face incident, what it says about AI agent governance, and how enterprises should respond.",
+      "language": "en",
+      "body": {
+        "format": "html",
+        "path": "body.en.html",
+        "markdown_path": null
+      },
+      "metrics": {
+        "word_count": 1460,
+        "reading_time_minutes": 6
+      }
+    },
+    "pt": {
+      "title": "Incidente OpenAI-Hugging Face: estratégia de marketing ou sinal de descontrole da IA?",
+      "seo_title": "Incidente OpenAI-Hugging Face: estratégia de marketing ou sinal de descontrole da IA? — Rodrigo Masini",
+      "description": "Uma leitura executiva sobre o incidente OpenAI-Hugging Face, o debate entre marketing e descontrole, e o que empresas devem mudar na governança de IA.",
+      "language": "pt-BR",
+      "body": {
+        "format": "html",
+        "path": "body.pt.html",
+        "markdown_path": null
+      },
+      "metrics": {
+        "word_count": 1540,
+        "reading_time_minutes": 7
+      }
+    }
+  },
   "generation": {
-    "generator": "Lemurian",
+    "generator": "Lemurian™",
     "mode": "editorial",
     "completed_at": "2026-07-23T00:00:00-04:00"
   }
